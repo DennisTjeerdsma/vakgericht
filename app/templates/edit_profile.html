@@ -1,11 +1,53 @@
+<!DOCTYPE html>
 {% extends "base.html" %}
 {% import 'bootstrap/wtf.html' as wtf %}
 
+{% block head %}
+{{super()}}
+<head>
+    <meta id="birthday-data" data-birthday="{{ user.bday }}">
+    <link rel='stylesheet' type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css">
+</head>
+{% endblock %}
+
 {% block app_content %}
+    {% block midcol %}
     <h1>Edit Profile</h1>
     <div class="row">
-        <div class="col-md-4">
-            {{ wtf.quick_form(form) }}
+        <div class="col-md-8">
+            <form class="form form-horizontal" method="post" role="form">
+                {{form.hidden_tag() }}
+                {{wtf.form_field(form.username)}}
+                {{wtf.form_field(form.email)}}
+                {{wtf.form_field(form.birthday)}}
+                {{wtf.form_field(form.study)}}
+                {{wtf.form_field(form.club)}}
+                {{wtf.form_field(form.about_me)}}
+                {{wtf.form_field(form.password)}}
+                {{wtf.form_field(form.password2)}}
+                {{wtf.form_field(form.submit)}}
+            </form>
+        </div>
+        <div>
+            {% if form.errors %}
+                {{form.errors}}
+            {% endif %}
         </div>
     </div>
+    {% endblock %}
+{% endblock %}
+
+{% block scripts %}
+    {{super()}}
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+  <script type="text/javascript">
+    var jsBday = $('#birthday-data').data("birthday");
+    $(function () {
+      $("#datepicker").datetimepicker({format: "DD/MM/YYYY"});
+        $('#datepicker').data("DateTimePicker").date(moment(jsBday).format('DD/MM/YYYY'));    
+        });
+  </script>
+
 {% endblock %}

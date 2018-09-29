@@ -51,8 +51,8 @@ class UserView(ModelView):
         ]
     }
 
-class EventView(ModelView):
 
+class EventView(ModelView):
     def is_accessible(access_level):
         if current_user.is_authenticated:
             user = User.query.filter_by(username=current_user.username).first()

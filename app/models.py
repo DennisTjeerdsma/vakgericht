@@ -1,4 +1,3 @@
-from hashlib import md5
 from time import time
 from flask import current_app, flash
 from flask_login import UserMixin
@@ -35,6 +34,8 @@ class User(UserMixin, db.Model):
     email = db.Column(db.String(120), index=True, unique=True)
     password_hash = db.Column(db.String(128))
     avatar = db.Column(db.String(128))
+    club = db.Column(db.String(128))
+    study = db.Column(db.String(128))
     posts = db.relationship('Post', backref='author', lazy='dynamic')
     about_me = db.Column(db.String(140))
     last_seen = db.Column(db.DateTime, default=datetime.utcnow)

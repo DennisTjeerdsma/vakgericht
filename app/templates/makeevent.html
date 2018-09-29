@@ -32,6 +32,11 @@
             {{wtf.form_field(form.ev_time, id = "datetimepicker3"  ) }}
             {{wtf.form_field(form.submit)}}
         </form>
+        <div>
+            {% if form.errors %}
+                {% form.errors %}
+            {% endif %}
+        </div>
         {% endblock %}
     </div>
     <div class="col-xs-12 col-md-2">

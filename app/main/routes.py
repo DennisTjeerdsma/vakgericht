@@ -49,7 +49,7 @@ def index():
         if posts.has_next else None
     prev_url = url_for('main.index', page=posts.prev_num) \
         if posts.has_prev else None  
-    return render_template('index.html', title='Home',posts=posts.items, next_url=next_url,
+    return render_template('index.html', title='Home', posts=posts.items, next_url=next_url,
                            prev_url=prev_url)
 
 
@@ -66,27 +66,35 @@ def user(username):
     prev_url = url_for('main.user', username=user.username,
                        page=posts.prev_num) if posts.has_prev else None                  
     return render_template('user.html', user=user, posts=posts.items,
-                           next_url=next_url, prev_url=prev_url,quotes=quotes)
+                           next_url=next_url, prev_url=prev_url, quotes=quotes)
 
 
 @bp.route('/edit_profile', methods=['GET', 'POST'])
 @login_required
 def edit_profile():
     form = EditProfileForm(current_user.username)
+    user_input = User.query.filter_by(username=current_user.username).first()
     if form.validate_on_submit():
+        if form.password.data != "":
+            current_user.set_password(form.password.data)
         current_user.username = form.username.data
         current_user.about_me = form.about_me.data
+        current_user.email = form.email.data
+        current_user.club = form.club.data
+        current_user.study = form.study.data
         db.session.commit()
         flash('Your changes have been saved.')
         return redirect(url_for('main.edit_profile'))
     elif request.method == 'GET':
         form.username.data = current_user.username
         form.about_me.data = current_user.about_me
-    return render_template('edit_profile.html', title='Edit Profile',
-                           form=form)
+        form.email.data = current_user.email
+        form.study.data = current_user.study
+        form.club.data = current_user.club
+    return render_template('edit_profile.html', title='Edit Profile', form=form, user=user_input)
 
 
-@bp.route('/enterquote',methods=['GET','POST'])
+@bp.route('/enterquote', methods=['GET', 'POST'])
 @login_required
 def enterquote():
     form = QuoteForm()
@@ -100,7 +108,7 @@ def enterquote():
         db.session.commit()
         flash('Your quote has been succesfully added')
         return redirect(url_for('main.index'))
-    return render_template('enterquote.html', title = 'Enter Quote', form=form)
+    return render_template('enterquote.html', title='Enter Quote', form=form)
 
 
 @bp.route('/makeevent', methods=['GET', 'POST'])
@@ -153,7 +161,7 @@ def event(event_id):
     if event.ev_time is not "":
         event.ev_time = datetime.strptime(event.ev_time, "%d/%m/%Y %H:%M")
     user = User.query.filter_by(username=current_user.username).first()
-    participants=event.participants
+    participants = event.participants
     is_participating = event.check_participant(user)
     return render_template('eventlink.html', event=event, user=user, participants=participants, is_participating=is_participating, now=datetime.utcnow())
 

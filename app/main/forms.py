@@ -1,8 +1,9 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, TextAreaField, SelectField
-from wtforms.validators import ValidationError, DataRequired, Length, Optional
+from wtforms import StringField, SubmitField, TextAreaField, SelectField, PasswordField, DateField
+from wtforms.validators import ValidationError, DataRequired, Length, Optional, EqualTo
 from app.models import User
 from datetime import datetime
+from wtforms.widgets import HiddenInput
 
 
 class RequiredIf(DataRequired):
@@ -33,8 +34,13 @@ class RequiredIf(DataRequired):
 
 class EditProfileForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
-    about_me = TextAreaField('About me',
-                             validators=[Length(min=0, max=140)])
+    about_me = TextAreaField('About me', validators=[Length(min=0, max=140)])
+    email = StringField("Email", validators=[DataRequired()])
+    birthday = StringField("Birthday", id="datepicker", validators=[DataRequired()])
+    club = StringField("Previous club", validators=[Length(min=0, max=128)])
+    study = StringField("Studying", validators=[Length(min=0, max=128)])
+    password = PasswordField("Password", validators=[Length(min=0, max=20)])
+    password2 = PasswordField("Repeat Password", validators=[Length(min=0, max=20), RequiredIf("password")])
     submit = SubmitField('Submit')
 
     def __init__(self, original_username, *args, **kwargs):
@@ -46,6 +52,17 @@ class EditProfileForm(FlaskForm):
             user = User.query.filter_by(username=self.username.data).first()
             if user is not None:
                 raise ValidationError('Please use a different username.')
+
+    def validate_password(self, password):
+        if password.data != "" and password.data != self.password2.data:
+            raise ValidationError("Password's must match")
+
+    def validate_email(self, email):
+        original_email = User.query.filter_by(username=self.original_username).first().email
+        if email.data != original_email:
+            user = User.query.filter_by(email=email.data).first()
+            if user is not None:
+                raise ValidationError("Email is in use, please pick a different email")
 
 
 class PostForm(FlaskForm):
