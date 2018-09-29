@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+<html>
+{% block app_content %}
+<div class="row">
+	<div class="col-xs-12 col-md-2">
+		{% block lftcol %}
+			{{super()}}
+		{% endblock %}
+	</div>
+	<div class="col-xs-12 col-md-8">
+		<table class="table table-hover">
+			<tr><h1>{{event.title}}</h1></tr><hr>
+			<tr><p>{{event.body}}</p></tr><hr>
+			<tr><b>Starts at: </b>{{moment(event.start_time, local=True).format('LLL')}}</tr><br>
+			<tr><b>Ends at: </b>{{moment(event.end_time, local=True ).format('LLL')}}</tr><br><hr>
+			<tr><p><b>Location: </b>{{event.location}}</p></tr>
+			{% if event.enroll == "Yes" and is_participating == 0 %}
+				<tr><p>Enrollment closes {{moment(event.ev_time, local=True).fromTime(now)}}</p> </p></tr>
+			{% elif event.enroll == "Yes" and is_participating == 1 %}
+				<tr><p>Un-enrollment closes {{moment(event.ev_time, local=True).format("LLL")}}</p> </p></tr>
+			{% endif %}
+		</table>
+	
+		<table class="table table-hover">
+				{% if is_participating == 0 and event.enroll == "Yes" %}
+					<form action="/enroll" method="post">
+						<input type="hidden" name="event_id" value="{{event.id}}"></input>
+						<button name="enrollbutton" type="submit" class="btn btn-default">Enroll</button>
+					</form>
+				{% elif is_participating == 1 and event.enroll == "Yes" %}
+					<form action="/unenroll" method="post">
+						<input type="hidden" name="event_id" value="{{event.id}}"></input>
+						<button name="unenrollbutton" type="submit" class="btn btn-default">Unenroll</button>
+					</form>
+				{% endif %}
+			<td></td>
+			</div>
+		</table>
+		{% for participant in participants %}
+			<a href="{{url_for('main.user',username=participant.username)}}">{{participant.username}}</a><br>
+		{% endfor %}
+	</div>
+	<div class="col-xs-12 col-md-2">
+		{% block rgtcol %}
+			{{super()}}
+		{% endblock %}
+	</div>
+</div>
+{% endblock %}
+
+</html>
