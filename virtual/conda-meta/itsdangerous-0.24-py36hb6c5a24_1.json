@@ -1,0 +1,93 @@
+{
+  "arch": "x86_64",
+  "build": "py36hb6c5a24_1",
+  "build_number": 1,
+  "channel": "https://repo.anaconda.com/pkgs/main/win-64",
+  "constrains": [],
+  "depends": [
+    "python >=3.6,<3.7.0a0"
+  ],
+  "extracted_package_dir": "C:\\Users\\denni\\Anaconda3\\pkgs\\itsdangerous-0.24-py36hb6c5a24_1",
+  "features": "",
+  "files": [
+    "Lib/site-packages/__pycache__/itsdangerous.cpython-36.pyc",
+    "Lib/site-packages/itsdangerous-0.24-py3.6.egg-info/PKG-INFO",
+    "Lib/site-packages/itsdangerous-0.24-py3.6.egg-info/SOURCES.txt",
+    "Lib/site-packages/itsdangerous-0.24-py3.6.egg-info/dependency_links.txt",
+    "Lib/site-packages/itsdangerous-0.24-py3.6.egg-info/not-zip-safe",
+    "Lib/site-packages/itsdangerous-0.24-py3.6.egg-info/top_level.txt",
+    "Lib/site-packages/itsdangerous.py"
+  ],
+  "fn": "itsdangerous-0.24-py36hb6c5a24_1.tar.bz2",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "link": {
+    "source": "C:\\Users\\denni\\Anaconda3\\pkgs\\itsdangerous-0.24-py36hb6c5a24_1",
+    "type": 1
+  },
+  "md5": "26d663933f958ba28efac3d172c04289",
+  "name": "itsdangerous",
+  "package_tarball_full_path": "C:\\Users\\denni\\Anaconda3\\pkgs\\itsdangerous-0.24-py36hb6c5a24_1.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "Lib/site-packages/__pycache__/itsdangerous.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "12b4151ec5075e4a1a1a367b3f18f3e2a4ab4ad97885653814833eb0f00c4b7c",
+        "sha256_in_prefix": "12b4151ec5075e4a1a1a367b3f18f3e2a4ab4ad97885653814833eb0f00c4b7c",
+        "size_in_bytes": 29285
+      },
+      {
+        "_path": "Lib/site-packages/itsdangerous-0.24-py3.6.egg-info/PKG-INFO",
+        "path_type": "hardlink",
+        "sha256": "49b622a0045724ce89ba53b0fba9dba504a310459177c535150aca8a8f346273",
+        "sha256_in_prefix": "49b622a0045724ce89ba53b0fba9dba504a310459177c535150aca8a8f346273",
+        "size_in_bytes": 500
+      },
+      {
+        "_path": "Lib/site-packages/itsdangerous-0.24-py3.6.egg-info/SOURCES.txt",
+        "path_type": "hardlink",
+        "sha256": "60d60419d884b0e8e4607ecfdda99d04e98a8de7e53c2951123d60788efeddb3",
+        "sha256_in_prefix": "60d60419d884b0e8e4607ecfdda99d04e98a8de7e53c2951123d60788efeddb3",
+        "size_in_bytes": 579
+      },
+      {
+        "_path": "Lib/site-packages/itsdangerous-0.24-py3.6.egg-info/dependency_links.txt",
+        "path_type": "hardlink",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "sha256_in_prefix": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "size_in_bytes": 1
+      },
+      {
+        "_path": "Lib/site-packages/itsdangerous-0.24-py3.6.egg-info/not-zip-safe",
+        "path_type": "hardlink",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "sha256_in_prefix": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "size_in_bytes": 1
+      },
+      {
+        "_path": "Lib/site-packages/itsdangerous-0.24-py3.6.egg-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "80a37538a2e4f358bb7db5968a574903cf0443d3619c6312bd9aa17f3f480a39",
+        "sha256_in_prefix": "80a37538a2e4f358bb7db5968a574903cf0443d3619c6312bd9aa17f3f480a39",
+        "size_in_bytes": 13
+      },
+      {
+        "_path": "Lib/site-packages/itsdangerous.py",
+        "path_type": "hardlink",
+        "sha256": "97bbbaa2a21ea4496560347b8519a813bcf8ed1cbabed14217a1006c9b7e8a52",
+        "sha256_in_prefix": "97bbbaa2a21ea4496560347b8519a813bcf8ed1cbabed14217a1006c9b7e8a52",
+        "size_in_bytes": 31840
+      }
+    ],
+    "paths_version": 1
+  },
+  "platform": "win32",
+  "requested_spec": "None",
+  "size": 21060,
+  "subdir": "win-64",
+  "timestamp": 1506008714477,
+  "track_features": "",
+  "url": "https://repo.continuum.io/pkgs/main/win-64/itsdangerous-0.24-py36hb6c5a24_1.tar.bz2",
+  "version": "0.24"
+}

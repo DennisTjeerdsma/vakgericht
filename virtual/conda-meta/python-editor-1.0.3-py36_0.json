@@ -1,0 +1,84 @@
+{
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/win-64",
+  "constrains": [],
+  "depends": [
+    "python 3.6*"
+  ],
+  "extracted_package_dir": "C:\\Users\\denni\\Anaconda3\\pkgs\\python-editor-1.0.3-py36_0",
+  "features": "",
+  "files": [
+    "Lib/site-packages/__pycache__/editor.cpython-36.pyc",
+    "Lib/site-packages/editor.py",
+    "Lib/site-packages/python_editor-1.0.3-py3.6.egg-info/PKG-INFO",
+    "Lib/site-packages/python_editor-1.0.3-py3.6.egg-info/SOURCES.txt",
+    "Lib/site-packages/python_editor-1.0.3-py3.6.egg-info/dependency_links.txt",
+    "Lib/site-packages/python_editor-1.0.3-py3.6.egg-info/top_level.txt"
+  ],
+  "fn": "python-editor-1.0.3-py36_0.tar.bz2",
+  "license": "Apache 2.0",
+  "license_family": "Apache",
+  "link": {
+    "source": "C:\\Users\\denni\\Anaconda3\\pkgs\\python-editor-1.0.3-py36_0",
+    "type": 1
+  },
+  "md5": "f9564c6228e31cec402f103853d40497",
+  "name": "python-editor",
+  "package_tarball_full_path": "C:\\Users\\denni\\Anaconda3\\pkgs\\python-editor-1.0.3-py36_0.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "Lib/site-packages/__pycache__/editor.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "ff978b71609b09f6f9fd9737e19bfcc68cbf0632f033cc9372d45a853177b98e",
+        "sha256_in_prefix": "ff978b71609b09f6f9fd9737e19bfcc68cbf0632f033cc9372d45a853177b98e",
+        "size_in_bytes": 2809
+      },
+      {
+        "_path": "Lib/site-packages/editor.py",
+        "path_type": "hardlink",
+        "sha256": "b196a3ed0aeacaccf668849f8428743d5f6f1a92e9de87b59dac9e844e2a4f34",
+        "sha256_in_prefix": "b196a3ed0aeacaccf668849f8428743d5f6f1a92e9de87b59dac9e844e2a4f34",
+        "size_in_bytes": 2803
+      },
+      {
+        "_path": "Lib/site-packages/python_editor-1.0.3-py3.6.egg-info/PKG-INFO",
+        "path_type": "hardlink",
+        "sha256": "4950c94f81384ba5c71af8c99727f42a524f213a1a960483be10ff22dbb28897",
+        "sha256_in_prefix": "4950c94f81384ba5c71af8c99727f42a524f213a1a960483be10ff22dbb28897",
+        "size_in_bytes": 945
+      },
+      {
+        "_path": "Lib/site-packages/python_editor-1.0.3-py3.6.egg-info/SOURCES.txt",
+        "path_type": "hardlink",
+        "sha256": "05c3d591f8a23c3b44277328d0a75f89ecd0a57aec91c3910da94bb2a778b0ad",
+        "sha256_in_prefix": "05c3d591f8a23c3b44277328d0a75f89ecd0a57aec91c3910da94bb2a778b0ad",
+        "size_in_bytes": 214
+      },
+      {
+        "_path": "Lib/site-packages/python_editor-1.0.3-py3.6.egg-info/dependency_links.txt",
+        "path_type": "hardlink",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "sha256_in_prefix": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "size_in_bytes": 1
+      },
+      {
+        "_path": "Lib/site-packages/python_editor-1.0.3-py3.6.egg-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "001941a763e192f660176a654132e05352a4dd7a276052e5f31821813425ae8f",
+        "sha256_in_prefix": "001941a763e192f660176a654132e05352a4dd7a276052e5f31821813425ae8f",
+        "size_in_bytes": 7
+      }
+    ],
+    "paths_version": 1
+  },
+  "platform": "win32",
+  "requested_spec": "None",
+  "size": 10188,
+  "subdir": "win-64",
+  "track_features": "",
+  "url": "https://conda.anaconda.org/conda-forge/win-64/python-editor-1.0.3-py36_0.tar.bz2",
+  "version": "1.0.3"
+}

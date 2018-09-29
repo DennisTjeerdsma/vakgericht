@@ -1,0 +1,347 @@
+{
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/win-64",
+  "constrains": [],
+  "depends": [
+    "python 3.6*"
+  ],
+  "extracted_package_dir": "C:\\Users\\denni\\Anaconda3\\pkgs\\pycparser-2.18-py36_0",
+  "features": "",
+  "files": [
+    "Lib/site-packages/pycparser-2.18-py3.6.egg-info/PKG-INFO",
+    "Lib/site-packages/pycparser-2.18-py3.6.egg-info/SOURCES.txt",
+    "Lib/site-packages/pycparser-2.18-py3.6.egg-info/dependency_links.txt",
+    "Lib/site-packages/pycparser-2.18-py3.6.egg-info/top_level.txt",
+    "Lib/site-packages/pycparser/__init__.py",
+    "Lib/site-packages/pycparser/__pycache__/__init__.cpython-36.pyc",
+    "Lib/site-packages/pycparser/__pycache__/_ast_gen.cpython-36.pyc",
+    "Lib/site-packages/pycparser/__pycache__/_build_tables.cpython-36.pyc",
+    "Lib/site-packages/pycparser/__pycache__/ast_transforms.cpython-36.pyc",
+    "Lib/site-packages/pycparser/__pycache__/c_ast.cpython-36.pyc",
+    "Lib/site-packages/pycparser/__pycache__/c_generator.cpython-36.pyc",
+    "Lib/site-packages/pycparser/__pycache__/c_lexer.cpython-36.pyc",
+    "Lib/site-packages/pycparser/__pycache__/c_parser.cpython-36.pyc",
+    "Lib/site-packages/pycparser/__pycache__/lextab.cpython-36.pyc",
+    "Lib/site-packages/pycparser/__pycache__/plyparser.cpython-36.pyc",
+    "Lib/site-packages/pycparser/__pycache__/yacctab.cpython-36.pyc",
+    "Lib/site-packages/pycparser/_ast_gen.py",
+    "Lib/site-packages/pycparser/_build_tables.py",
+    "Lib/site-packages/pycparser/_c_ast.cfg",
+    "Lib/site-packages/pycparser/ast_transforms.py",
+    "Lib/site-packages/pycparser/c_ast.py",
+    "Lib/site-packages/pycparser/c_generator.py",
+    "Lib/site-packages/pycparser/c_lexer.py",
+    "Lib/site-packages/pycparser/c_parser.py",
+    "Lib/site-packages/pycparser/lextab.py",
+    "Lib/site-packages/pycparser/ply/__init__.py",
+    "Lib/site-packages/pycparser/ply/__pycache__/__init__.cpython-36.pyc",
+    "Lib/site-packages/pycparser/ply/__pycache__/cpp.cpython-36.pyc",
+    "Lib/site-packages/pycparser/ply/__pycache__/ctokens.cpython-36.pyc",
+    "Lib/site-packages/pycparser/ply/__pycache__/lex.cpython-36.pyc",
+    "Lib/site-packages/pycparser/ply/__pycache__/yacc.cpython-36.pyc",
+    "Lib/site-packages/pycparser/ply/__pycache__/ygen.cpython-36.pyc",
+    "Lib/site-packages/pycparser/ply/cpp.py",
+    "Lib/site-packages/pycparser/ply/ctokens.py",
+    "Lib/site-packages/pycparser/ply/lex.py",
+    "Lib/site-packages/pycparser/ply/yacc.py",
+    "Lib/site-packages/pycparser/ply/ygen.py",
+    "Lib/site-packages/pycparser/plyparser.py",
+    "Lib/site-packages/pycparser/yacctab.py"
+  ],
+  "fn": "pycparser-2.18-py36_0.tar.bz2",
+  "license": "BSD 3-clause",
+  "link": {
+    "source": "C:\\Users\\denni\\Anaconda3\\pkgs\\pycparser-2.18-py36_0",
+    "type": 1
+  },
+  "md5": "0d0423de1fc55fc724c6c7846adfcb0c",
+  "name": "pycparser",
+  "package_tarball_full_path": "C:\\Users\\denni\\Anaconda3\\pkgs\\pycparser-2.18-py36_0.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "Lib/site-packages/pycparser-2.18-py3.6.egg-info/PKG-INFO",
+        "path_type": "hardlink",
+        "sha256": "6d11669da4f8883db16dbb99207238da5c35f7aaa937cb5bea208e46f632ba83",
+        "sha256_in_prefix": "6d11669da4f8883db16dbb99207238da5c35f7aaa937cb5bea208e46f632ba83",
+        "size_in_bytes": 619
+      },
+      {
+        "_path": "Lib/site-packages/pycparser-2.18-py3.6.egg-info/SOURCES.txt",
+        "path_type": "hardlink",
+        "sha256": "82256a4520a03cf14bff66bce7e093c6cb199d056b7cdf02626506c10fee7142",
+        "sha256_in_prefix": "82256a4520a03cf14bff66bce7e093c6cb199d056b7cdf02626506c10fee7142",
+        "size_in_bytes": 4567
+      },
+      {
+        "_path": "Lib/site-packages/pycparser-2.18-py3.6.egg-info/dependency_links.txt",
+        "path_type": "hardlink",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "sha256_in_prefix": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "size_in_bytes": 1
+      },
+      {
+        "_path": "Lib/site-packages/pycparser-2.18-py3.6.egg-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "73e94f712ef82fff0aa07ec813a3d0179a1fca2ad140d57856191b48520f7963",
+        "sha256_in_prefix": "73e94f712ef82fff0aa07ec813a3d0179a1fca2ad140d57856191b48520f7963",
+        "size_in_bytes": 10
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "ab4a780f40962b77cadfb6b7cb165fc1fc0a7226691a57d72f737cb98e5a42bf",
+        "sha256_in_prefix": "ab4a780f40962b77cadfb6b7cb165fc1fc0a7226691a57d72f737cb98e5a42bf",
+        "size_in_bytes": 2909
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/__pycache__/__init__.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "f30c3367e0157a135faa60108b67e3370b9adafd2b8ff584d8a82d60a6777006",
+        "sha256_in_prefix": "f30c3367e0157a135faa60108b67e3370b9adafd2b8ff584d8a82d60a6777006",
+        "size_in_bytes": 2489
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/__pycache__/_ast_gen.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "c776b4e5f8633a58a831ff2a966e3582bf5f3b173c78ff1f868e4f652cc267e9",
+        "sha256_in_prefix": "c776b4e5f8633a58a831ff2a966e3582bf5f3b173c78ff1f868e4f652cc267e9",
+        "size_in_bytes": 8594
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/__pycache__/_build_tables.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "a2dbf1c8c9ce4ea0a28ffd60318505afe1d6d2e6f1b945d364b76d3e042a95a4",
+        "sha256_in_prefix": "a2dbf1c8c9ce4ea0a28ffd60318505afe1d6d2e6f1b945d364b76d3e042a95a4",
+        "size_in_bytes": 476
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/__pycache__/ast_transforms.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "234e0ff27ce8d49c1376836f45640c8994938a98447e0607b16592dc48ba0818",
+        "sha256_in_prefix": "234e0ff27ce8d49c1376836f45640c8994938a98447e0607b16592dc48ba0818",
+        "size_in_bytes": 2496
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/__pycache__/c_ast.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "15d2d90a06f2e8b76d2842ee2b07ca13f5970a87c3a5e41717550a8f78161c5c",
+        "sha256_in_prefix": "15d2d90a06f2e8b76d2842ee2b07ca13f5970a87c3a5e41717550a8f78161c5c",
+        "size_in_bytes": 30201
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/__pycache__/c_generator.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "e1dac63250bdad1aad5abe3ed95190f7913447d77af82bb05afc0226060b5d06",
+        "sha256_in_prefix": "e1dac63250bdad1aad5abe3ed95190f7913447d77af82bb05afc0226060b5d06",
+        "size_in_bytes": 15367
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/__pycache__/c_lexer.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "56b3e65176aaa050a5144b7f08ff11e9cfa2bfa9f6b4acc49981fff73c38c249",
+        "sha256_in_prefix": "56b3e65176aaa050a5144b7f08ff11e9cfa2bfa9f6b4acc49981fff73c38c249",
+        "size_in_bytes": 12144
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/__pycache__/c_parser.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "b5a917292039381d1e1228fbd7e48d9627166289cc0595be883fcb6dab6fad6e",
+        "sha256_in_prefix": "b5a917292039381d1e1228fbd7e48d9627166289cc0595be883fcb6dab6fad6e",
+        "size_in_bytes": 60198
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/__pycache__/lextab.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "065bd0e076ca03ad4fe128b6fb81f9af27f3aca8e404452a0370a78572f9d89f",
+        "sha256_in_prefix": "065bd0e076ca03ad4fe128b6fb81f9af27f3aca8e404452a0370a78572f9d89f",
+        "size_in_bytes": 5579
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/__pycache__/plyparser.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "4f497c5ffd5143b8eb54d2052486b86831e901b7f273425bc62bb38ccd177c52",
+        "sha256_in_prefix": "4f497c5ffd5143b8eb54d2052486b86831e901b7f273425bc62bb38ccd177c52",
+        "size_in_bytes": 4406
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/__pycache__/yacctab.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "0bab95a1b598f8259bae394e05a424af6896a9c43fd87731996bc9fe115e2f3a",
+        "sha256_in_prefix": "0bab95a1b598f8259bae394e05a424af6896a9c43fd87731996bc9fe115e2f3a",
+        "size_in_bytes": 138849
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/_ast_gen.py",
+        "path_type": "hardlink",
+        "sha256": "e6e25129ee9b7c193262093ebfdadbff6e5eba071205787d4d3a4dc4878da210",
+        "sha256_in_prefix": "e6e25129ee9b7c193262093ebfdadbff6e5eba071205787d4d3a4dc4878da210",
+        "size_in_bytes": 8675
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/_build_tables.py",
+        "path_type": "hardlink",
+        "sha256": "cc0f6277e51f5764c3f60a810e60f8f22b23b3b7fe6d81447d21246199fc34bb",
+        "sha256_in_prefix": "cc0f6277e51f5764c3f60a810e60f8f22b23b3b7fe6d81447d21246199fc34bb",
+        "size_in_bytes": 857
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/_c_ast.cfg",
+        "path_type": "hardlink",
+        "sha256": "b863943408fbf90d5675ce921ca2ef746c5e00d3db63dbc956a3a70bb6784a31",
+        "sha256_in_prefix": "b863943408fbf90d5675ce921ca2ef746c5e00d3db63dbc956a3a70bb6784a31",
+        "size_in_bytes": 4204
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/ast_transforms.py",
+        "path_type": "hardlink",
+        "sha256": "8d05b9c8ee569a049192a2fc79ae1fae61f55b7997e8f69f796dce24c3e75e69",
+        "sha256_in_prefix": "8d05b9c8ee569a049192a2fc79ae1fae61f55b7997e8f69f796dce24c3e75e69",
+        "size_in_bytes": 3574
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/c_ast.py",
+        "path_type": "hardlink",
+        "sha256": "6b6eb839eec5b12a4ad1f7ca6a175abaf7433b45aa7f3298ae9eb55fb41a5c10",
+        "sha256_in_prefix": "6b6eb839eec5b12a4ad1f7ca6a175abaf7433b45aa7f3298ae9eb55fb41a5c10",
+        "size_in_bytes": 24432
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/c_generator.py",
+        "path_type": "hardlink",
+        "sha256": "839a13db515d53920d1a3417f3a7a997f92a1b32c6f9ae8b418202582a699c28",
+        "sha256_in_prefix": "839a13db515d53920d1a3417f3a7a997f92a1b32c6f9ae8b418202582a699c28",
+        "size_in_bytes": 13951
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/c_lexer.py",
+        "path_type": "hardlink",
+        "sha256": "a694002b351f10cf9b8b59e0b8bdba6003e9cedf40828b173f2e912bf8ef2d2f",
+        "sha256_in_prefix": "a694002b351f10cf9b8b59e0b8bdba6003e9cedf40828b173f2e912bf8ef2d2f",
+        "size_in_bytes": 14463
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/c_parser.py",
+        "path_type": "hardlink",
+        "sha256": "0467686928cbae11166ad5234b26ce0404cf02519d83e82bcdb25bd24f9f9a6b",
+        "sha256_in_prefix": "0467686928cbae11166ad5234b26ce0404cf02519d83e82bcdb25bd24f9f9a6b",
+        "size_in_bytes": 66340
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/lextab.py",
+        "path_type": "hardlink",
+        "sha256": "1728d122c6aadb05620ea24d61271446e73b1835b9175d95b98c4e24b8758f88",
+        "sha256_in_prefix": "1728d122c6aadb05620ea24d61271446e73b1835b9175d95b98c4e24b8758f88",
+        "size_in_bytes": 7011
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/ply/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "ab8b3ce90c11b1845adb42fdb9e4b17e1fa13e28697ed0630cebd86b6fd24b66",
+        "sha256_in_prefix": "ab8b3ce90c11b1845adb42fdb9e4b17e1fa13e28697ed0630cebd86b6fd24b66",
+        "size_in_bytes": 102
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/ply/__pycache__/__init__.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "1e5351b4dcb6f1b92e9a53fd3e594b785463d649d722c7bd455c6e9bb97de182",
+        "sha256_in_prefix": "1e5351b4dcb6f1b92e9a53fd3e594b785463d649d722c7bd455c6e9bb97de182",
+        "size_in_bytes": 175
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/ply/__pycache__/cpp.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "a3657681c720c32e95f924f0cc85008b77aad05b23d597e87d7e718608c988d8",
+        "sha256_in_prefix": "a3657681c720c32e95f924f0cc85008b77aad05b23d597e87d7e718608c988d8",
+        "size_in_bytes": 16253
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/ply/__pycache__/ctokens.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "0cb4930136c2416e722feb05d1065623de4fb84f38476307de615fd67103a04e",
+        "sha256_in_prefix": "0cb4930136c2416e722feb05d1065623de4fb84f38476307de615fd67103a04e",
+        "size_in_bytes": 2148
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/ply/__pycache__/lex.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "5b2a8911e8fb11079573c94d0f54290482998881d29bbfef9b2318afa7287f43",
+        "sha256_in_prefix": "5b2a8911e8fb11079573c94d0f54290482998881d29bbfef9b2318afa7287f43",
+        "size_in_bytes": 21449
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/ply/__pycache__/yacc.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "db6e1b78744ebf2f29c0021c8e159d045d371072e1e62fc9bad4be0ed335a8cc",
+        "sha256_in_prefix": "db6e1b78744ebf2f29c0021c8e159d045d371072e1e62fc9bad4be0ed335a8cc",
+        "size_in_bytes": 53877
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/ply/__pycache__/ygen.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "0d6b7231afbe51f5492d4a079dc8455dcb475677cbe999e8f0d5a65951ac0343",
+        "sha256_in_prefix": "0d6b7231afbe51f5492d4a079dc8455dcb475677cbe999e8f0d5a65951ac0343",
+        "size_in_bytes": 1690
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/ply/cpp.py",
+        "path_type": "hardlink",
+        "sha256": "02cf771dda2a7126558cf537d4f1b72f2a979404db8066edbc212c002fc1721e",
+        "sha256_in_prefix": "02cf771dda2a7126558cf537d4f1b72f2a979404db8066edbc212c002fc1721e",
+        "size_in_bytes": 33317
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/ply/ctokens.py",
+        "path_type": "hardlink",
+        "sha256": "30a92c9cde344de84f86055fc422618e3fc18cbf78ddaa6b78004a633f9b9746",
+        "sha256_in_prefix": "30a92c9cde344de84f86055fc422618e3fc18cbf78ddaa6b78004a633f9b9746",
+        "size_in_bytes": 3177
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/ply/lex.py",
+        "path_type": "hardlink",
+        "sha256": "ed0a25e7bc7bd361d9c2303764ba7ef38094116ab511e856f8debb5b38218be3",
+        "sha256_in_prefix": "ed0a25e7bc7bd361d9c2303764ba7ef38094116ab511e856f8debb5b38218be3",
+        "size_in_bytes": 42918
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/ply/yacc.py",
+        "path_type": "hardlink",
+        "sha256": "d594b94497075e211266c3588bec4a7b237eb80d84ee39606cf1b4a30de62462",
+        "sha256_in_prefix": "d594b94497075e211266c3588bec4a7b237eb80d84ee39606cf1b4a30de62462",
+        "size_in_bytes": 137322
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/ply/ygen.py",
+        "path_type": "hardlink",
+        "sha256": "d8960d798b6b3f3d49ccb48b3b77781ac4bccc953c8d8fc8fc2475548f605ab0",
+        "sha256_in_prefix": "d8960d798b6b3f3d49ccb48b3b77781ac4bccc953c8d8fc8fc2475548f605ab0",
+        "size_in_bytes": 2251
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/plyparser.py",
+        "path_type": "hardlink",
+        "sha256": "2176f42ced7088dffc2821d863fc6ea39419949dd1e9bb2cdb127ff945e11e06",
+        "sha256_in_prefix": "2176f42ced7088dffc2821d863fc6ea39419949dd1e9bb2cdb127ff945e11e06",
+        "size_in_bytes": 4006
+      },
+      {
+        "_path": "Lib/site-packages/pycparser/yacctab.py",
+        "path_type": "hardlink",
+        "sha256": "d2474dad5c8e1a3c5a2c03717f85a2e6b35abf59f1c8e3831cd20e3b29c10fa1",
+        "sha256_in_prefix": "d2474dad5c8e1a3c5a2c03717f85a2e6b35abf59f1c8e3831cd20e3b29c10fa1",
+        "size_in_bytes": 164587
+      }
+    ],
+    "paths_version": 1
+  },
+  "platform": "win32",
+  "requested_spec": "None",
+  "size": 173218,
+  "subdir": "win-64",
+  "track_features": "",
+  "url": "https://conda.anaconda.org/conda-forge/win-64/pycparser-2.18-py36_0.tar.bz2",
+  "version": "2.18"
+}

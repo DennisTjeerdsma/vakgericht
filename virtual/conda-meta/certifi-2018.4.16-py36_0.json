@@ -1,0 +1,99 @@
+{
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/win-64",
+  "constrains": [],
+  "depends": [
+    "python 3.6*"
+  ],
+  "extracted_package_dir": "C:\\Users\\denni\\Anaconda3\\pkgs\\certifi-2018.4.16-py36_0",
+  "features": "",
+  "files": [
+    "Lib/site-packages/certifi-2018.04.16-py3.6.egg-info",
+    "Lib/site-packages/certifi/__init__.py",
+    "Lib/site-packages/certifi/__main__.py",
+    "Lib/site-packages/certifi/__pycache__/__init__.cpython-36.pyc",
+    "Lib/site-packages/certifi/__pycache__/__main__.cpython-36.pyc",
+    "Lib/site-packages/certifi/__pycache__/core.cpython-36.pyc",
+    "Lib/site-packages/certifi/cacert.pem",
+    "Lib/site-packages/certifi/core.py"
+  ],
+  "fn": "certifi-2018.4.16-py36_0.tar.bz2",
+  "license": "ISC",
+  "link": {
+    "source": "C:\\Users\\denni\\Anaconda3\\pkgs\\certifi-2018.4.16-py36_0",
+    "type": 1
+  },
+  "md5": "018219ae4545b0c1f51d94685768f3f5",
+  "name": "certifi",
+  "package_tarball_full_path": "C:\\Users\\denni\\Anaconda3\\pkgs\\certifi-2018.4.16-py36_0.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "Lib/site-packages/certifi-2018.04.16-py3.6.egg-info",
+        "path_type": "hardlink",
+        "sha256": "9cafc85f2b3335e402d3753e910369af6f23d34ce584315ea6a0c52106962a4c",
+        "sha256_in_prefix": "9cafc85f2b3335e402d3753e910369af6f23d34ce584315ea6a0c52106962a4c",
+        "size_in_bytes": 3019
+      },
+      {
+        "_path": "Lib/site-packages/certifi/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "2870e542d4104d198e1b44c98b5d99204e565aadad6073396b1df4117e94274e",
+        "sha256_in_prefix": "2870e542d4104d198e1b44c98b5d99204e565aadad6073396b1df4117e94274e",
+        "size_in_bytes": 63
+      },
+      {
+        "_path": "Lib/site-packages/certifi/__main__.py",
+        "path_type": "hardlink",
+        "sha256": "162398b75165b6cb7bc24f4345ae860a806bf2a054c65350bbf30a25fd3813ab",
+        "sha256_in_prefix": "162398b75165b6cb7bc24f4345ae860a806bf2a054c65350bbf30a25fd3813ab",
+        "size_in_bytes": 41
+      },
+      {
+        "_path": "Lib/site-packages/certifi/__pycache__/__init__.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "774815d23fb86096c4b4983e55634fed1c1ada65366d331131d1263c68b8657b",
+        "sha256_in_prefix": "774815d23fb86096c4b4983e55634fed1c1ada65366d331131d1263c68b8657b",
+        "size_in_bytes": 205
+      },
+      {
+        "_path": "Lib/site-packages/certifi/__pycache__/__main__.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "0d60d659c8610a20164e1c582da903e503fde74bcbf4c02f86b044726c52e461",
+        "sha256_in_prefix": "0d60d659c8610a20164e1c582da903e503fde74bcbf4c02f86b044726c52e461",
+        "size_in_bytes": 176
+      },
+      {
+        "_path": "Lib/site-packages/certifi/__pycache__/core.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "3dc413fdc112f3af9122deb15624a8d590590ab1cc25b080177cd1924df8a872",
+        "sha256_in_prefix": "3dc413fdc112f3af9122deb15624a8d590590ab1cc25b080177cd1924df8a872",
+        "size_in_bytes": 1140
+      },
+      {
+        "_path": "Lib/site-packages/certifi/cacert.pem",
+        "path_type": "hardlink",
+        "sha256": "d25c0c2db7e2e2e9b30dd3a674b31dacd920671c3ee72e8f084d743eb9c9cbe9",
+        "sha256_in_prefix": "d25c0c2db7e2e2e9b30dd3a674b31dacd920671c3ee72e8f084d743eb9c9cbe9",
+        "size_in_bytes": 268839
+      },
+      {
+        "_path": "Lib/site-packages/certifi/core.py",
+        "path_type": "hardlink",
+        "sha256": "c4f403746fec8b2e40ec17ea1966bb44985c03ad715c4a8f892af0f463728471",
+        "sha256_in_prefix": "c4f403746fec8b2e40ec17ea1966bb44985c03ad715c4a8f892af0f463728471",
+        "size_in_bytes": 836
+      }
+    ],
+    "paths_version": 1
+  },
+  "platform": "win32",
+  "requested_spec": "None",
+  "size": 146305,
+  "subdir": "win-64",
+  "track_features": "",
+  "url": "https://conda.anaconda.org/conda-forge/win-64/certifi-2018.4.16-py36_0.tar.bz2",
+  "version": "2018.4.16"
+}

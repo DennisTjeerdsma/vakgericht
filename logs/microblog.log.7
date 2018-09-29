@@ -1,0 +1,126 @@
+2018-06-27 09:15:01,708 INFO: Microblog startup [in G:\My Drive\Python\FlaskGuide\app\__init__.py:74]
+2018-06-27 09:15:59,286 INFO: Microblog startup [in G:\My Drive\Python\FlaskGuide\app\__init__.py:74]
+2018-06-27 09:16:28,996 INFO: Microblog startup [in G:\My Drive\Python\FlaskGuide\app\__init__.py:74]
+2018-06-27 09:18:50,307 INFO: Microblog startup [in G:\My Drive\Python\FlaskGuide\app\__init__.py:74]
+2018-06-27 09:19:26,975 ERROR: Exception on / [GET] [in G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\sqlalchemy\engine\default.py", line 508, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: user
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\flask\app.py", line 2087, in preprocess_request
+    rv = func()
+  File "G:\My Drive\Python\FlaskGuide\app\main\routes.py", line 13, in before_request
+    if current_user.is_authenticated:
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\werkzeug\local.py", line 306, in _get_current_object
+    return self.__local()
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\flask_login\utils.py", line 26, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\flask_login\utils.py", line 335, in _get_user
+    current_app.login_manager._load_user()
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\flask_login\login_manager.py", line 359, in _load_user
+    return self.reload_user()
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\flask_login\login_manager.py", line 321, in reload_user
+    user = self.user_callback(user_id)
+  File "G:\My Drive\Python\FlaskGuide\app\models.py", line 88, in load_user
+    return User.query.get(int(id))
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\sqlalchemy\orm\query.py", line 887, in get
+    ident, loading.load_on_pk_identity)
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\sqlalchemy\orm\query.py", line 962, in _get_impl
+    return db_load_fn(self, primary_key_identity)
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\sqlalchemy\orm\loading.py", line 250, in load_on_pk_identity
+    return q.one()
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\sqlalchemy\orm\query.py", line 2894, in one
+    ret = self.one_or_none()
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\sqlalchemy\orm\query.py", line 2864, in one_or_none
+    ret = list(self)
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\sqlalchemy\orm\query.py", line 2935, in __iter__
+    return self._execute_and_instances(context)
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\sqlalchemy\orm\query.py", line 2958, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\sqlalchemy\engine\base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
+    context)
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\sqlalchemy\engine\default.py", line 508, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user [SQL: 'SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen \nFROM user \nWHERE user.id = ?'] [parameters: (1,)] (Background on this error at: http://sqlalche.me/e/e3q8)
+2018-06-27 09:20:07,999 INFO: Microblog startup [in G:\My Drive\Python\FlaskGuide\app\__init__.py:74]
+2018-06-27 09:21:12,524 INFO: Microblog startup [in G:\My Drive\Python\FlaskGuide\app\__init__.py:74]
+2018-06-27 09:28:24,401 INFO: Microblog startup [in G:\My Drive\Python\FlaskGuide\app\__init__.py:74]
+2018-06-27 13:24:49,521 INFO: Microblog startup [in G:\My Drive\Python\FlaskGuide\app\__init__.py:74]
+2018-06-27 13:24:49,541 INFO: Microblog startup [in G:\My Drive\Python\FlaskGuide\app\__init__.py:91]
+2018-06-27 13:24:49,541 INFO: Microblog startup [in G:\My Drive\Python\FlaskGuide\app\__init__.py:91]
+2018-07-01 21:26:19,866 INFO: Microblog startup [in G:\My Drive\Python\FlaskGuide\app\__init__.py:72]
+2018-07-01 21:26:20,290 INFO: Microblog startup [in G:\My Drive\Python\FlaskGuide\app\__init__.py:89]
+2018-07-01 21:26:20,290 INFO: Microblog startup [in G:\My Drive\Python\FlaskGuide\app\__init__.py:89]
+2018-07-01 21:28:00,970 INFO: Microblog startup [in G:\My Drive\Python\FlaskGuide\app\__init__.py:72]
+2018-07-01 21:28:00,974 INFO: Microblog startup [in G:\My Drive\Python\FlaskGuide\app\__init__.py:89]
+2018-07-01 21:28:00,974 INFO: Microblog startup [in G:\My Drive\Python\FlaskGuide\app\__init__.py:89]
+2018-07-01 21:28:16,101 ERROR: Exception on /makeevent [POST] [in G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\My Drive\Python\FlaskGuide\app\main\routes.py", line 147, in event
+    EventForm.val_date(form,form.end_time.data)
+  File "G:\My Drive\Python\FlaskGuide\app\main\forms.py", line 44, in val_date
+    raise ValidationError('fuck je moeder')
+wtforms.validators.ValidationError: fuck je moeder
+2018-07-01 21:28:16,101 ERROR: Exception on /makeevent [POST] [in G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\My Drive\Python\FlaskGuide\virtual\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\My Drive\Python\FlaskGuide\app\main\routes.py", line 147, in event
+    EventForm.val_date(form,form.end_time.data)
+  File "G:\My Drive\Python\FlaskGuide\app\main\forms.py", line 44, in val_date
+    raise ValidationError('fuck je moeder')
+wtforms.validators.ValidationError: fuck je moeder

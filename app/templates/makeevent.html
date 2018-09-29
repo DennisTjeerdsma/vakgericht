@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+
+{% block head %}
+{{super()}}
+<head>
+    <link rel='stylesheet' type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css">
+</head>
+{% endblock %}
+
+{% block app_content %}
+<html>
+<div class="row">
+    <div class="col-xs-12 col-md-2">
+        {% block lftcol %}
+            {{super()}}
+        {% endblock %}
+    </div>
+    <div class="col-xs-12 col-md-8">
+        {% block midcol %}
+        <form class="form form-horizontal" method="post" role="form">
+            {{form.hidden_tag() }}
+            {{wtf.form_field(form.title) }}
+            {{wtf.form_field(form.post) }}
+            {{wtf.form_field(form.location) }}
+            {{wtf.form_field(form.start_time) }}
+            {{wtf.form_field(form.end_time) }}
+            {{wtf.form_field(form.dropdown) }}
+            {{wtf.form_field(form.ev_time, id = "datetimepicker3"  ) }}
+            {{wtf.form_field(form.submit)}}
+        </form>
+        {% endblock %}
+    </div>
+    <div class="col-xs-12 col-md-2">
+        {% block rgtcol %}
+            {{super()}}
+        {% endblock %}
+    </div>
+    </div>
+{% endblock %}
+
+</html>
+
+{% block scripts %}
+  {{ super() }}
+
+ 	<script>
+ 		$(document).ready(function(){
+ 			$("#datetimepicker3").hide()
+ 			$("#dropdown").change(function() {
+ 				var dropdown = $("#dropdown").val();
+ 				if (dropdown == "Yes"){
+                     $("#datetimepicker3").show();
+ 				} else {
+ 					$("#datetimepicker3").hide();
+ 				}
+ 			});
+ 		});
+
+ 	</script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $('#datetimepicker1').datetimepicker({format: 'DD/MM/YYYY HH:mm'});
+    });
+  </script>
+  <script type="text/javascript">
+    $(function () {
+      $('#datetimepicker2').datetimepicker({format: 'DD/MM/YYYY HH:mm'});
+    });
+  </script>
+  <script type="text/javascript">
+    $(function () {
+      $('#datetimepicker3').datetimepicker({format: 'DD/MM/YYYY HH:mm'});
+    });
+  </script>
+
+
+{% endblock %}

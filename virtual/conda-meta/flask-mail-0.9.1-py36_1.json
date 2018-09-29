@@ -1,0 +1,102 @@
+{
+  "arch": "x86_64",
+  "build": "py36_1",
+  "build_number": 1,
+  "channel": "https://conda.anaconda.org/conda-forge/win-64",
+  "constrains": [],
+  "depends": [
+    "blinker",
+    "flask",
+    "python 3.6*"
+  ],
+  "extracted_package_dir": "C:\\Users\\denni\\Anaconda3\\pkgs\\flask-mail-0.9.1-py36_1",
+  "features": "",
+  "files": [
+    "Lib/site-packages/Flask_Mail-0.9.1-py3.6.egg-info/PKG-INFO",
+    "Lib/site-packages/Flask_Mail-0.9.1-py3.6.egg-info/SOURCES.txt",
+    "Lib/site-packages/Flask_Mail-0.9.1-py3.6.egg-info/dependency_links.txt",
+    "Lib/site-packages/Flask_Mail-0.9.1-py3.6.egg-info/not-zip-safe",
+    "Lib/site-packages/Flask_Mail-0.9.1-py3.6.egg-info/requires.txt",
+    "Lib/site-packages/Flask_Mail-0.9.1-py3.6.egg-info/top_level.txt",
+    "Lib/site-packages/__pycache__/flask_mail.cpython-36.pyc",
+    "Lib/site-packages/flask_mail.py"
+  ],
+  "fn": "flask-mail-0.9.1-py36_1.tar.bz2",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "link": {
+    "source": "C:\\Users\\denni\\Anaconda3\\pkgs\\flask-mail-0.9.1-py36_1",
+    "type": 1
+  },
+  "md5": "9caf63e72e6a006c71e15fa617f8ec1c",
+  "name": "flask-mail",
+  "package_tarball_full_path": "C:\\Users\\denni\\Anaconda3\\pkgs\\flask-mail-0.9.1-py36_1.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "Lib/site-packages/Flask_Mail-0.9.1-py3.6.egg-info/PKG-INFO",
+        "path_type": "hardlink",
+        "sha256": "31064442bf2c146e0448a32891d1a7acaae31b5399339f329ed2b868b774e81e",
+        "sha256_in_prefix": "31064442bf2c146e0448a32891d1a7acaae31b5399339f329ed2b868b774e81e",
+        "size_in_bytes": 973
+      },
+      {
+        "_path": "Lib/site-packages/Flask_Mail-0.9.1-py3.6.egg-info/SOURCES.txt",
+        "path_type": "hardlink",
+        "sha256": "1e8471dbf9c3306d1cc349f9af86397f911ac71adcef25687f0c0e08fb187a61",
+        "sha256_in_prefix": "1e8471dbf9c3306d1cc349f9af86397f911ac71adcef25687f0c0e08fb187a61",
+        "size_in_bytes": 818
+      },
+      {
+        "_path": "Lib/site-packages/Flask_Mail-0.9.1-py3.6.egg-info/dependency_links.txt",
+        "path_type": "hardlink",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "sha256_in_prefix": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "size_in_bytes": 1
+      },
+      {
+        "_path": "Lib/site-packages/Flask_Mail-0.9.1-py3.6.egg-info/not-zip-safe",
+        "path_type": "hardlink",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "sha256_in_prefix": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "size_in_bytes": 1
+      },
+      {
+        "_path": "Lib/site-packages/Flask_Mail-0.9.1-py3.6.egg-info/requires.txt",
+        "path_type": "hardlink",
+        "sha256": "6c2c00c5cbd1d3372ee87bbaa66c7b6402cf68d1eea0cad264005a9af0086ff5",
+        "sha256_in_prefix": "6c2c00c5cbd1d3372ee87bbaa66c7b6402cf68d1eea0cad264005a9af0086ff5",
+        "size_in_bytes": 14
+      },
+      {
+        "_path": "Lib/site-packages/Flask_Mail-0.9.1-py3.6.egg-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "0d7558326a191261f42cc608a7298c04cf9e900961940bb54c27169f618cf4e1",
+        "sha256_in_prefix": "0d7558326a191261f42cc608a7298c04cf9e900961940bb54c27169f618cf4e1",
+        "size_in_bytes": 11
+      },
+      {
+        "_path": "Lib/site-packages/__pycache__/flask_mail.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "83f2b59dfba0547b5c76c0a1f22bb02c1074b04e697a0a895c886b81254548b5",
+        "sha256_in_prefix": "83f2b59dfba0547b5c76c0a1f22bb02c1074b04e697a0a895c886b81254548b5",
+        "size_in_bytes": 16516
+      },
+      {
+        "_path": "Lib/site-packages/flask_mail.py",
+        "path_type": "hardlink",
+        "sha256": "207b22ca58132173aeea2d0c4107151aa040ac297da51d97ce404cc63d7f96bf",
+        "sha256_in_prefix": "207b22ca58132173aeea2d0c4107151aa040ac297da51d97ce404cc63d7f96bf",
+        "size_in_bytes": 17950
+      }
+    ],
+    "paths_version": 1
+  },
+  "platform": "win32",
+  "requested_spec": "flask-mail",
+  "size": 16190,
+  "subdir": "win-64",
+  "track_features": "",
+  "url": "https://conda.anaconda.org/conda-forge/win-64/flask-mail-0.9.1-py36_1.tar.bz2",
+  "version": "0.9.1"
+}
