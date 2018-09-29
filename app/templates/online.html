@@ -1,6 +1,0 @@
-<!DOCTYPE html>
-<html>
-{% for user in online_user  %}
-	<p><a href="{{ url_for('main.user', username=user) }}">{{user|string()}}<br></p>
-{% endfor %}
-</html>
