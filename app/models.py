@@ -4,11 +4,8 @@ from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 import jwt
 from app import db, login
-from redis import Redis
 from datetime import datetime
 
-
-redis = Redis()
 
 participants_table = db.Table('participants',
                               db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True),
@@ -66,7 +63,7 @@ class User(UserMixin, db.Model):
         expires = now + (current_app.config['ONLINE_LAST_MINUTES'] * 60) + 10
         all_users_key = 'online-users/%d' % (now // 60)
         user_key = 'user-activity/%s' % user_id
-        p = redis.pipeline()
+        p = current_app.redis.pipeline()
         p.sadd(all_users_key, user_id)
         p.set(user_key, now)
         p.expireat(all_users_key, expires)
@@ -74,7 +71,7 @@ class User(UserMixin, db.Model):
         p.execute()
 
     def get_user_last_activity(user_id):
-        last_active = redis.get('user-activity/%s' % user_id)
+        last_active = current_app.redis.get('user-activity/%s' % user_id)
         if last_active is None:
             return None
         return datetime.utcfromtimestamp(int(last_active))
@@ -82,7 +79,7 @@ class User(UserMixin, db.Model):
     def get_online_users():
         current = int(time()) // 60
         minutes = range(current_app.config['ONLINE_LAST_MINUTES'])
-        return redis.sunion(['online-users/%d' % (current - x)
+        return current_app.redis.sunion(['online-users/%d' % (current - x)
                          for x in minutes])
 
     def is_admin(self):

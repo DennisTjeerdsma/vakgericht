@@ -36,8 +36,7 @@ def create_app(config_class=Config):
     mail.init_app(app)
     bootstrap.init_app(app)
     moment.init_app(app)
-    images = UploadSet("images", IMAGES)
-    configure_uploads(app, images)
+    app.redis = Redis.from_url(app.config["REDIS_URL"])
 
     from app.models import User, Event, Post, Quote
     from app.main.views import UserView, EventView

@@ -9,7 +9,7 @@ from app import configure_uploads
 from flask_uploads import UploadSet, IMAGES
 
 
-images = UploadSet("images", IMAGES)
+avatars = UploadSet("avatars", IMAGES)
 
 
 class RequiredIf(DataRequired):

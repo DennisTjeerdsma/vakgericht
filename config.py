@@ -26,7 +26,7 @@ class Config(object):
     LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
     ONLINE_LAST_MINUTES = 5
     MY_DATE_FORMATS= ['%d/%m/%y']
-
+    REDIS_URL = os.environ.get("REDIS_URL") or "redis://"
     UPLOADED_AVATARS_DEST = './Images/Avatars/'
 
 
