@@ -7,7 +7,11 @@
     {% block midcol %}
     <table class="table table-hover">
         <tr valign="top">
+        {% if user.avatar %}
         <td style="width: 300;"><img src="{{ url_for('static', filename= 'avatars/' + user.avatar) }}" width="250" height="250"/> </td>
+        {% else %}
+        <td style="width: 300;"><img src="{{ url_for('static', filename= 'avatars/vakgericht.jpeg') }}" width="250" height="250"/> </td>
+        {% endif %}
             <td>
                 <div>
                     <h1>{{ user.username }}</h1>

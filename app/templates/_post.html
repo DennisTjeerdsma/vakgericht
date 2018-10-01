@@ -1,25 +1,25 @@
     <table class="table table-hover">
         <tr>
-            <td width="70px">
+            <td width="75x">
                 <a href="{{ url_for('main.user', username=post.author.username) }}">
                 </a>
-            </td>
-            <td>
                 {% set user_link %}
                     <a href="{{ url_for('main.user', username=post.author.username) }}">
                         {% if post.author.avatar %}
-                            <img src="{{post.author.avatar}}" style="width:75px;height:75px;">
-                            {{post.author.avatar}}
+                            <img src="{{ url_for('static', filename= 'avatars/' + post.author.avatar) }}" style="width:75px;height:75px;">
+                        {% else %}
+                            <img src="{{ url_for('static', filename= 'avatars/vakgericht.jpeg') }}" style="width:75px;height:75px;">
                         {% endif %}
                         {{ post.author.username }}
                     </a>
                 {% endset %}
+            </td>
+            <td>
                 <h4>{{post.title}}</h4>
                 <p>{{user_link}} posted {{moment(post.timestamp).format('LLL')}}</p>
                 <br>
                 <span id="post{{ post.id }}">{{ post.body }}</span>
-
-                <br><br>
             </td>
+                <br><br>
         </tr>
     </table>

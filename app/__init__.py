@@ -22,7 +22,6 @@ login.login_view = 'auth.login'
 mail = Mail()
 bootstrap = Bootstrap()
 moment = Moment()
-redis = Redis()
 admin = Admin()
 
 
