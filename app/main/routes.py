@@ -11,6 +11,7 @@ from sqlalchemy import func
 import pytz
 import sys
 from app.main.forms import images
+from werkzeug.utils import secure_filename
 
 
 @bp.context_processor
@@ -83,7 +84,8 @@ def edit_profile():
         current_user.email = form.email.data
         current_user.club = form.club.data
         current_user.study = form.study.data
-        filename = images.save
+        filename = images.save(request.files["avatar"])
+        current_user.avatar = secure_filename(filename)
         db.session.commit()
         flash('Your changes have been saved.')
         return redirect(url_for('main.edit_profile'))

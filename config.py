@@ -1,12 +1,14 @@
 import os
 from dotenv import load_dotenv
 from redis import Redis
+import sys
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 load_dotenv(os.path.join(basedir, '.env'))
 
 redis = Redis()
 
+print(basedir, sys.stderr)
 class Config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'you-will-never-guess'
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
@@ -23,4 +25,14 @@ class Config(object):
     POSTS_PER_PAGE = 25
     LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
     ONLINE_LAST_MINUTES = 5
-    MY_DATE_FORMATS=['%d/%m/%y']
+    MY_DATE_FORMATS= ['%d/%m/%y']
+
+    UPLOADED_AVATARS_DEST = './Images/Avatars/'
+
+
+    """Configuring uploads"""
+    UPLOADS_DEFAULT_DEST = './Images/Avatars'
+    UPLOADS_DEFAULT_URL = 'http://localhost:5000/static/img/'
+
+    UPLOADED_IMAGES_DEST = "./Images/Avatars"
+    UPLOADED_IMAGES_URL = 'http://localhost:5000/static/img/'

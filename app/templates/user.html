@@ -10,9 +10,11 @@
     <div class="col-xs-12 col-md-8">
     {% block midcol %}
     <table class="table table-hover">
-        <tr>
-            <td>
+        <tr valign="top">
+        <td><img src="{{ url_for('static', filename= 'bert.png') }}" width="250" height="250"> </td>
+                <td>
                 <h1>{{ user.username }}</h1>
+                {{user.avatar}}
                 {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
                 {% if user.last_seen %}
                 <p>Birthday: {{moment(user.bday).format("DD/MM/YYYY")}}
@@ -26,6 +28,7 @@
                 {% endif %}
 
                 {% endif %}
+                </td>
         </tr>
     </table>
     {% for post in posts %}
