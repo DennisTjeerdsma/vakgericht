@@ -14,7 +14,6 @@ from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
 from flask_uploads import UploadSet, IMAGES, configure_uploads
 
-
 db = SQLAlchemy()
 migrate = Migrate()
 login = LoginManager()
@@ -36,6 +35,9 @@ def create_app(config_class=Config):
     bootstrap.init_app(app)
     moment.init_app(app)
     app.redis = Redis.from_url(app.config["REDIS_URL"])
+
+    avatars = UploadSet("avatars", IMAGES, default_dest=app.config["UPLOADED_AVATARS_DEST"])
+    configure_uploads(app, avatars)
 
     from app.models import User, Event, Post, Quote
     from app.main.views import UserView, EventView
