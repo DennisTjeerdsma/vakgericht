@@ -1,15 +1,10 @@
 from flask_wtf import FlaskForm
 from flask import current_app
-from wtforms import StringField, SubmitField, TextAreaField, SelectField, PasswordField, DateField
-from wtforms.validators import ValidationError, DataRequired, Length, Optional, EqualTo
+from wtforms import StringField, SubmitField, TextAreaField, SelectField, PasswordField
+from wtforms.validators import ValidationError, DataRequired, Length, Optional
 from app.models import User
 from datetime import datetime
-from flask_wtf.file import FileField, FileAllowed, FileRequired
-from app import configure_uploads
-from flask_uploads import UploadSet, IMAGES
-
-
-avatars = UploadSet("avatars", IMAGES)
+from flask_wtf.file import FileField, FileAllowed
 
 
 class RequiredIf(DataRequired):
@@ -44,7 +39,7 @@ class EditProfileForm(FlaskForm):
     email = StringField("Email", validators=[DataRequired()])
     birthday = StringField("Birthday", id="datepicker", validators=[DataRequired()])
     club = StringField("Previous club", validators=[Length(min=0, max=128)])
-    avatar = FileField("Avatar", validators=[FileAllowed(avatars, "images only!")])
+    avatar = FileField("Avatar", validators=[FileAllowed("avatars", "images only!")])
     study = StringField("Studying", validators=[Length(min=0, max=128)])
     password = PasswordField("Password", validators=[Length(min=0, max=20)])
     password2 = PasswordField("Repeat Password", validators=[Length(min=0, max=20), RequiredIf("password")])

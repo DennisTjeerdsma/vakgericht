@@ -6,8 +6,6 @@ import sys
 basedir = os.path.abspath(os.path.dirname(__file__))
 load_dotenv(os.path.join(basedir, '.env'))
 
-redis = Redis()
-
 print(basedir, sys.stderr)
 class Config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'you-will-never-guess'
