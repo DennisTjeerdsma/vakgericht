@@ -10,7 +10,7 @@ from app.main import bp
 from sqlalchemy import func
 import pytz
 import sys
-from app.main.forms import images
+from app.main.forms import avatars
 from werkzeug.utils import secure_filename
 
 
@@ -84,7 +84,7 @@ def edit_profile():
         current_user.email = form.email.data
         current_user.club = form.club.data
         current_user.study = form.study.data
-        filename = images.save(request.files["avatar"])
+        filename = avatars.save(request.files["avatar"])
         current_user.avatar = secure_filename(filename)
         db.session.commit()
         flash('Your changes have been saved.')

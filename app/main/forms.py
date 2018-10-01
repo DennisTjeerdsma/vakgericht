@@ -9,7 +9,7 @@ from app import configure_uploads
 from flask_uploads import UploadSet, IMAGES
 
 
-images = UploadSet("images", IMAGES)
+avatars = UploadSet("avatars", IMAGES)
 
 
 class RequiredIf(DataRequired):
@@ -44,7 +44,7 @@ class EditProfileForm(FlaskForm):
     email = StringField("Email", validators=[DataRequired()])
     birthday = StringField("Birthday", id="datepicker", validators=[DataRequired()])
     club = StringField("Previous club", validators=[Length(min=0, max=128)])
-    avatar = FileField("Avatar", validators=[FileAllowed(images, "images only!")])
+    avatar = FileField("Avatar", validators=[FileAllowed(avatars, "images only!")])
     study = StringField("Studying", validators=[Length(min=0, max=128)])
     password = PasswordField("Password", validators=[Length(min=0, max=20)])
     password2 = PasswordField("Repeat Password", validators=[Length(min=0, max=20), RequiredIf("password")])
