@@ -23,12 +23,4 @@ class Config(object):
     POSTS_PER_PAGE = 25
     LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
     ONLINE_LAST_MINUTES = 5
-    MY_DATE_FORMATS= ['%d/%m/%y']
-
-
-    """Configuring uploads"""
-    UPLOADS_DEFAULT_DEST = './Images/Avatars'
-    UPLOADS_DEFAULT_URL = 'http://localhost:5000/static/img/'
-
-    UPLOADED_IMAGES_DEST = "./Images/Avatars"
-    UPLOADED_IMAGES_URL = 'http://localhost:5000/static/img/'
+    MY_DATE_FORMATS=['%d/%m/%y']

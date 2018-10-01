@@ -12,7 +12,6 @@ from config import Config
 from redis import Redis
 from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
-from flask_uploads import UploadSet, IMAGES, configure_uploads
 
 
 db = SQLAlchemy()
@@ -36,8 +35,6 @@ def create_app(config_class=Config):
     mail.init_app(app)
     bootstrap.init_app(app)
     moment.init_app(app)
-    images = UploadSet("images", IMAGES)
-    configure_uploads(app, images)
 
     from app.models import User, Event, Post, Quote
     from app.main.views import UserView, EventView
@@ -69,14 +66,14 @@ def create_app(config_class=Config):
             mail_handler = SMTPHandler(
                 mailhost=(app.config['MAIL_SERVER'], app.config['MAIL_PORT']),
                 fromaddr='no-reply@' + app.config['MAIL_SERVER'],
-                toaddrs=app.config['ADMINS'], subject='vakgericht Failure',
+                toaddrs=app.config['ADMINS'], subject='microblog Failure',
                 credentials=auth, secure=secure)
             mail_handler.setLevel(logging.ERROR)
             app.logger.addHandler(mail_handler)
 
         if not os.path.exists('logs'):
             os.mkdir('logs')
-        file_handler = RotatingFileHandler('logs/vakgericht.log',
+        file_handler = RotatingFileHandler('logs/microblog.log',
                                            maxBytes=10240, backupCount=10)
         file_handler.setFormatter(logging.Formatter(
             '%(asctime)s %(levelname)s: %(message)s '
@@ -85,7 +82,7 @@ def create_app(config_class=Config):
         app.logger.addHandler(file_handler)
 
         app.logger.setLevel(logging.INFO)
-        app.logger.info('vakgericht startup')
+        app.logger.info('microblog startup')
         if app.config['LOG_TO_STDOUT']:
             stream_handler = logging.StreamHandler()
             stream_handler.setLevel(logging.INFO)
@@ -93,7 +90,7 @@ def create_app(config_class=Config):
         else:
             if not os.path.exists('logs'):
                 os.mkdir('logs')
-            file_handler = RotatingFileHandler('logs/vakgericht.log',
+            file_handler = RotatingFileHandler('logs/microblog.log',
                                                maxBytes=10240, backupCount=10)
             file_handler.setFormatter(logging.Formatter(
                 '%(asctime)s %(levelname)s: %(message)s '

@@ -15,12 +15,11 @@
     <h1>Edit Profile</h1>
     <div class="row">
         <div class="col-md-8">
-            <form class="form form-horizontal" action="{{url_for('main.edit_profile') }}" method="post" role="form" enctype="multipart/form-data">
+            <form class="form form-horizontal" method="post" role="form">
                 {{form.hidden_tag() }}
                 {{wtf.form_field(form.username)}}
                 {{wtf.form_field(form.email)}}
                 {{wtf.form_field(form.birthday)}}
-                {{wtf.form_field(form.avatar)}}
                 {{wtf.form_field(form.study)}}
                 {{wtf.form_field(form.club)}}
                 {{wtf.form_field(form.about_me)}}
