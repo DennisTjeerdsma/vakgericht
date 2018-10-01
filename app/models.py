@@ -8,6 +8,7 @@ from redis import Redis
 from datetime import datetime
 
 
+
 redis = Redis()
 
 participants_table = db.Table('participants',
