@@ -7,6 +7,10 @@
             <td>
                 {% set user_link %}
                     <a href="{{ url_for('main.user', username=post.author.username) }}">
+                        {% if post.author.avatar %}
+                            <img src="{{post.author.avatar}}" style="width:75px;height:75px;">
+                            {{post.author.avatar}}
+                        {% endif %}
                         {{ post.author.username }}
                     </a>
                 {% endset %}
