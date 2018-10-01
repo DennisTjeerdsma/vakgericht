@@ -49,7 +49,11 @@
         {% block app_content %}
         <body>
     <div class="row">
-        {% block lftcol %}
+        {% block midcol %}
+        <div class="col-xs-12 col-md-8">
+        </div>
+        {% endblock %}
+        {% block rgtcol %}
         <div class="col-xs-12 col-md-2">
             <div class="container">
                 <h3>Agenda</h3>
@@ -57,19 +61,13 @@
                     <p><a href= "{{url_for('main.event', event_id=item.id) }}">{{item.title|string() }} <br></a> {{moment(item.start_time, local=True).calendar()}}</p>
                 {% endfor %}
             </div>
-        </div>
-        {% endblock %}
-        {% block midcol %}
-        <div class="col-xs-12 col-md-8">
-        </div>
-        {% endblock %}
-        {% block rgtcol %}
-        <div class="col-xs-12 col-md-2">
             <h3>Online</h3>
-            {% for user in online_user  %}
-                <p><a href="{{ url_for('main.user', username=user) }}">{{user|string()}}<br></a></p>
-            {% endfor %}       
-        </div>
+                <div class="container">
+                    {% for user in online_user  %}
+                    <p><a href="{{ url_for('main.user', username=user) }}">{{user|string()}}<br></a></p>
+                    {% endfor %}       
+                </div>
+            </div>
         {% endblock %}
     </div>
     </div>

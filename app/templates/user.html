@@ -1,3 +1,57 @@
+<<<<<<< HEAD
+{% extends "base.html" %}
+
+{% block app_content %}
+<div class='row'>
+    <div class="col-xs-12 col-md-9">
+    {% block midcol %}
+    <table class="table table-hover">
+        <tr>
+            <td>
+                <h1>{{ user.username }}</h1>
+                {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
+                {% if user.last_seen %}
+                <p>Birthday: {{moment(user.bday).format("DD/MM/YYYY")}}
+                <p>Previous Club: {{user.club}}.</p>
+                <p>Studying: {{user.study}}.</p>
+
+                <p>Last seen on: {{ moment(user.last_seen).format('LLL') }}</p>
+
+                {% if user == current_user %}
+                <p><a href="{{ url_for('main.edit_profile') }}">Edit your profile</a></p>
+                {% endif %}
+
+                {% endif %}
+        </tr>
+    </table>
+    {% for post in posts %}
+        {% include '_post.html' %}
+    {% endfor %}
+    <nav aria-label="...">
+        <ul class="pager">
+            <li class="previous{% if not prev_url %} disabled{% endif %}">
+                <a href="{{ prev_url or '#' }}">
+                    <span aria-hidden="true">&larr;</span> Newer posts
+                </a>
+            </li>
+            <li class="next{% if not next_url %} disabled{% endif %}">
+                <a href="{{ next_url or '#' }}">
+                    Older posts <span aria-hidden="true">&rarr;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    </div>
+    {% endblock %}
+    <div class="col-xs-12 col-md-3">
+        {% block rgtcol %}
+            {{super()}}
+        {% endblock %}
+    </div>
+</div>
+
+{% endblock %}
+=======
 {% extends "base.html" %}
 
 {% block app_content %}
@@ -58,3 +112,4 @@
 </div>
 
 {% endblock %}
+>>>>>>> a09a1ccfdc1d1db0ee79376146a5490cf51bae65

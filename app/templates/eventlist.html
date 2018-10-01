@@ -5,12 +5,7 @@
 {% block app_content %}
 <body>
 	<div class="row">
-		<div class="col-xs-12 col-md-2">
-			{% block lftcol %}
-				{{super()}}
-			{% endblock %}
-		</div>
-		<div class="col-xs-12 col-md-8">
+		<div class="col-xs-12 col-md-9">
             <a href="{{url_for('main.makeevent')}}" class="btn btn-default">Make event</a>
             <hr>
 			{% for event in events %}
@@ -35,7 +30,7 @@
 			</div>
 			{% endfor %}
 		</div>
-		<div class="col-xs-12 col-md-2">
+		<div class="col-xs-12 col-md-3">
 			{% block rgtcol %}
 				{{super()}}
 			{% endblock %}

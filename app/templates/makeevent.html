@@ -14,12 +14,7 @@
 {% block app_content %}
 <html>
 <div class="row">
-    <div class="col-xs-12 col-md-2">
-        {% block lftcol %}
-            {{super()}}
-        {% endblock %}
-    </div>
-    <div class="col-xs-12 col-md-8">
+    <div class="col-xs-12 col-md-9">
         {% block midcol %}
         <form class="form form-horizontal" method="post" role="form">
             {{form.hidden_tag() }}
@@ -32,14 +27,9 @@
             {{wtf.form_field(form.ev_time, id = "datetimepicker3"  ) }}
             {{wtf.form_field(form.submit)}}
         </form>
-        <div>
-            {% if form.errors %}
-                {% form.errors %}
-            {% endif %}
-        </div>
         {% endblock %}
     </div>
-    <div class="col-xs-12 col-md-2">
+    <div class="col-xs-12 col-md-3">
         {% block rgtcol %}
             {{super()}}
         {% endblock %}
