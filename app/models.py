@@ -7,6 +7,7 @@ from app import db, login
 from datetime import datetime
 
 
+
 participants_table = db.Table('participants',
                               db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True),
                               db.Column('event_id', db.Integer, db.ForeignKey('event.id'), primary_key=True)

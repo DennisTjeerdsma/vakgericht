@@ -36,11 +36,13 @@ def create_app(config_class=Config):
     moment.init_app(app)
     app.redis = Redis.from_url(app.config["REDIS_URL"])
 
-    avatars = UploadSet("avatars", IMAGES, default_dest=app.config["UPLOADED_AVATARS_DEST"])
-    configure_uploads(app, avatars)
+    app.avatars = UploadSet("avatars", IMAGES, default_dest=app.config["UPLOADED_AVATARS_DEST"])
+    configure_uploads(app, app.avatars)
 
     from app.models import User, Event, Post, Quote
-    from app.main.views import UserView, EventView
+
+    with app.app_context():
+        from app.main.views import UserView, EventView
 
     admin.init_app(app)
     admin.add_view(UserView(User, db.session))
@@ -104,8 +106,6 @@ def create_app(config_class=Config):
         app.logger.setLevel(logging.INFO)
         app.logger.info('Vakgericht startup')
 
+
     return app
-
-
-from app import models
 

@@ -6,7 +6,7 @@ import sys
 basedir = os.path.abspath(os.path.dirname(__file__))
 load_dotenv(os.path.join(basedir, '.env'))
 
-print(basedir, sys.stderr)
+
 class Config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'you-will-never-guess'
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
@@ -25,12 +25,12 @@ class Config(object):
     ONLINE_LAST_MINUTES = 5
     MY_DATE_FORMATS= ['%d/%m/%y']
     REDIS_URL = os.environ.get("REDIS_URL") or "redis://"
-    UPLOADED_AVATARS_DEST = './Images/Avatars/'
+    UPLOADED_AVATARS_DEST = './app/static/avatars'
 
 
     """Configuring uploads"""
-    UPLOADS_DEFAULT_DEST = './Images/Avatars'
+    UPLOADS_DEFAULT_DEST = '.app/static/avatars'
     UPLOADS_DEFAULT_URL = 'http://localhost:5000/static/img/'
 
-    UPLOADED_IMAGES_DEST = "./Images/Avatars"
+    UPLOADED_IMAGES_DEST = ".app/static/avatars"
     UPLOADED_IMAGES_URL = 'http://localhost:5000/static/img/'
