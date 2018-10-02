@@ -94,7 +94,7 @@ class EventForm(FlaskForm):
     title = StringField('Title', validators=[DataRequired(), Length(min=1,max=140)])
     post = TextAreaField('Description', validators=[Length(min=0, max=500)])
     location = StringField('Location', validators=[Length(min=0)])
-    dropdown = SelectField(choices=[("No", "No"), ("Yes", "Yes")], id="dropdown", validators=[DataRequired()])
+    dropdown = SelectField("Enrollment", choices=[("No", "No"), ("Yes", "Yes")], id="dropdown", validators=[DataRequired()])
     start_time = StringField('Event start', id='datetimepicker1', validators=[DataRequired()])
     end_time = StringField('Event end', id='datetimepicker2', validators=[DataRequired()])
     ev_time = StringField('Enrollment closed', id='datetimepicker3', validators=[RequiredIf(dropdown="Yes")])
