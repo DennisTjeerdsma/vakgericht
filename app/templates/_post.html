@@ -1,25 +1,26 @@
-    <table class="table table-hover">
-        <tr>
-            <td width="75x">
-                <a href="{{ url_for('main.user', username=post.author.username) }}">
-                </a>
-                {% set user_link %}
-                    <a href="{{ url_for('main.user', username=post.author.username) }}">
-                        {% if post.author.avatar %}
-                            <img src="{{ url_for('static', filename= 'avatars/' + post.author.avatar) }}" style="width:75px;height:75px;">
-                        {% else %}
-                            <img src="{{ url_for('static', filename= 'avatars/vakgericht.jpeg') }}" style="width:75px;height:75px;">
-                        {% endif %}
-                        {{ post.author.username }}
-                    </a>
-                {% endset %}
-            </td>
-            <td>
-                <h4>{{post.title}}</h4>
-                <p>{{user_link}} posted {{moment(post.timestamp).format('LLL')}}</p>
-                <br>
-                <span id="post{{ post.id }}">{{ post.body }}</span>
-            </td>
-                <br><br>
-        </tr>
-    </table>
+<table class="table table-hover">
+    <tr>
+        <td style="width: 90px">
+            <p><a href="{{url_for('main.user', username=post.author.username) }}"></a></p>
+        </td>
+        <td>
+            <h4>{{ post.title }}</h4>
+        </td>
+    </tr>
+    <tr>
+        <td style="width:90px">
+            <img src="{{ url_for('static', filename= 'avatars/' + post.author.avatar) }}" style="width:80px;height:80px;">
+        </td>    
+        <td>
+            <p>Posted {{moment(post.timestamp).format("LLL") }}</p>
+            <span id="post{{ post.id }}">{{ post.body }}</span>
+        </td>
+    </tr>
+</table>
+
+
+  
+  
+  
+  
+  
