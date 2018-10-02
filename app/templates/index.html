@@ -3,34 +3,32 @@
 
 {% block app_content %}
 <div>
-    <div class="row">
-        </div>
-        <div class="col-xs-12 col-md-9">
-            <h1>Hi, {{current_user.username}}</h1>
-            <a href="{{url_for('main.makepost')}}" class="btn btn-default">Make Post</a>
-            <hr>
-            {% for post in posts %}
-                {% include '_post.html' %}
-            {% endfor %}
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-9">
+                <h1>Hi, {{current_user.username}}</h1>
+                <a href="{{url_for('main.makepost')}}" class="btn btn-default">Make Post</a>
+                <hr>
+                {% for post in posts %}
+                    {% include '_post.html' %}
+                {% endfor %}
                 <nav aria-label="...">
                     <ul class="pager">
                         <li class="previous{% if not prev_url %} disabled{% endif %}">
                             <a href="{{ prev_url or '#' }}">
                             <span aria-hidden="true">&larr;</span> {{ ('Newer posts') }}
-                             </a>
-                        </li>
+                            </a></li>
                         <li class="next{% if not next_url %} disabled{% endif %}">
                             <a href="{{ next_url or '#' }}">
-                            {{ ('Older posts') }} <span aria-hidden="true">&rarr;</span>
-                        </a>
-                        </li>
-                    </ul>
+                            {{ ('Older posts') }} <span aria-hidden="true">&rarr;</span></a></li>
+                     </ul>
                 </nav>   
-        </div>
-        <div class="col-xs-12 col-md-3">
-            {% block rgtcol %}
-                {{super()}}
-            {% endblock %}     
+            </div>
+            <div class="col-xs-12 col-md-3">
+                {% block rgtcol %}
+                    {{super()}}
+                {% endblock %}     
+            </div>
         </div>
     </div>
 </div>

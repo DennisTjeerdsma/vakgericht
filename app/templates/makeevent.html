@@ -16,7 +16,7 @@
 <div class="row">
     <div class="col-xs-12 col-md-9">
         {% block midcol %}
-        <form class="form form-horizontal" method="post" role="form">
+        <form class="form form-group" method="post" role="form">
             {{form.hidden_tag() }}
             {{wtf.form_field(form.title) }}
             {{wtf.form_field(form.post) }}
@@ -24,7 +24,8 @@
             {{wtf.form_field(form.start_time) }}
             {{wtf.form_field(form.end_time) }}
             {{wtf.form_field(form.dropdown) }}
-            {{wtf.form_field(form.ev_time, id = "datetimepicker3"  ) }}
+            {{form.ev_time.label(id = "ev_label")}}<br>
+            <input type="text" class="form-control" id="datetimepicker3" name="ev_time"><br>
             {{wtf.form_field(form.submit)}}
         </form>
         {% endblock %}
@@ -44,17 +45,20 @@
 
  	<script>
  		$(document).ready(function(){
- 			$("#datetimepicker3").hide()
+ 			$("#datetimepicker3").hide();
+     $("#ev_label").hide();
+
  			$("#dropdown").change(function() {
  				var dropdown = $("#dropdown").val();
  				if (dropdown == "Yes"){
                      $("#datetimepicker3").show();
+                     $("#ev_label").show();
  				} else {
  					$("#datetimepicker3").hide();
+          $("#ev_label").hide();
  				}
  			});
  		});
-
  	</script>
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
