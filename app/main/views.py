@@ -34,7 +34,6 @@ class UserView(ModelView):
 
     def on_model_change(self, form, model, is_created):
         self.username = model.username
-        print(self.username, sys.stderr)
 
     def prefix_name(self, file_data):
         parts = op.splitext(file_data.filename)

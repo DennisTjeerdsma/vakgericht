@@ -84,7 +84,7 @@ def edit_profile():
         current_user.email = form.email.data
         current_user.club = form.club.data
         current_user.study = form.study.data
-        filename = current_app.avatars.save(request.files["avatar"], name=current_user.username + str(time.time())+".")
+        filename = current_app.avatars.save(request.files["uploadFile"], name=current_user.username + str(time.time())+".")
         current_user.avatar = secure_filename(filename)
         db.session.commit()
         flash('Your changes have been saved.')

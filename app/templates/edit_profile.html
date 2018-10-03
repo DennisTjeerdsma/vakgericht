@@ -25,7 +25,8 @@
                     <tr>
                         <td style = "width:90px;">
                         <img src="{{ url_for('static', filename= 'avatars/' + current_user.avatar) }}" style="width:100px;height:100px;"><br>
-                        <p><td><input type="file" class="btn btn-info" id="avatar" name="avatar"></td>
+                        <input id="uploadFile" name="uploadFile" type="file" style="display:none;">
+                        <div id="uploadButton" class="btn btn-primary">Upload</div>
                         <td><a href ="{{url_for('main.delete_avatar', user_id=user.id)}}" class="btn btn-danger">Delete current</a></td></p>
                         </td><br>
                     </tr>
@@ -56,5 +57,12 @@
         $('#datepicker').data("DateTimePicker").date(moment(jsBday).format('DD/MM/YYYY'));    
         });
   </script>
+
+<script>
+ $('#uploadButton').on('click', function () {
+    $('#uploadFile').click();
+});
+</script>
+  
 
 {% endblock %}
