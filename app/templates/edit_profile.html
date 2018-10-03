@@ -24,7 +24,7 @@
                     {{form.avatar.label}}<br>
                     <tr>
                         <td style = "width:90px;">
-                        <img src="{{ url_for('static', filename= 'avatars/' + current_user.avatar) }}" style="width:100px;height:100px;">
+                        <img src="{{ url_for('static', filename= 'avatars/' + current_user.avatar) }}" style="width:100px;height:100px;"><br>
                         <p><td><input type="file" class="btn btn-info" id="avatar" name="avatar"></td>
                         <td><a href ="{{url_for('main.delete_avatar', user_id=user.id)}}" class="btn btn-danger">Delete current</a></td></p>
                         </td><br>

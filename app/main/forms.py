@@ -71,11 +71,9 @@ class EditProfileForm(FlaskForm):
         user = User.query.filter_by(username=self.original_username).first()
         if avatar.data is None:
             return
-        if user.avatar is not "vakgericht.jpeg" \
+        if user.avatar != "vakgericht.jpeg" \
                 and os.path.isfile(os.path.join(current_app.config["UPLOADED_AVATARS_DEST"], user.avatar)):
             os.remove(os.path.join(current_app.config["UPLOADED_AVATARS_DEST"], user.avatar))
-
-
 
 
 class PostForm(FlaskForm):

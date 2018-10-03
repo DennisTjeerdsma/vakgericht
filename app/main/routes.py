@@ -195,8 +195,8 @@ def unenroll():
 @login_required
 def delete_avatar(user_id):
     user = User.query.filter_by(id=user_id).first_or_404()
-    if user.avatar is not "vakgericht.jpeg":
+    if user.avatar != "vakgericht.jpeg":
         os.remove(os.path.join(current_app.config["UPLOADED_AVATARS_DEST"], user.avatar))
-    user.avatar = "vakgericht.jpeg"
+        user.avatar = "vakgericht.jpeg"
     db.session.commit()
     return redirect(url_for("main.edit_profile"))
