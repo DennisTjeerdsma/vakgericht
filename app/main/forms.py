@@ -6,6 +6,7 @@ from app.models import User
 from datetime import datetime
 from flask_wtf.file import FileField, FileAllowed
 import os
+from flask_wysiwyg import WysiwygField
 
 
 class RequiredIf(DataRequired):
