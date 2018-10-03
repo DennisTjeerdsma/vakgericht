@@ -13,7 +13,8 @@ from redis import Redis
 from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
 from flask_uploads import UploadSet, IMAGES, configure_uploads
-
+from flask_admin.contrib.fileadmin import FileAdmin
+from flask_admin.contrib import rediscli
 
 db = SQLAlchemy()
 migrate = Migrate()
@@ -50,6 +51,8 @@ def create_app(config_class=Config):
     admin.add_view(EventView(Event, db.session))
     admin.add_view(ModelView(Post, db.session))
     admin.add_view(ModelView(Quote, db.session))
+    admin.add_view(FileAdmin("./app/static/", '/static/'))
+    admin.add_view(rediscli.RedisCli(app.redis))
 
     from app.errors import bp as errors_bp
     app.register_blueprint(errors_bp)
