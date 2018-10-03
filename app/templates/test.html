@@ -1,52 +1,33 @@
-<!DOCTYPE html>
+<!doctype HTML>
 
-{% extends "base.html" %}
-{% import 'bootstrap/wtf.html' as wtf %}
-
-
-{% block head %}
-{{super()}}
-<head>
-    <link rel='stylesheet' type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css">
-</head>
-{% endblock %}
-
-{% block app_content %}
 <html>
-<div class="row">
-    <div class="col-xs-12 col-md-9">
-        {% block midcol %}
-            {{wtf.quick_form(form)}}
+  <head>
+  <title>My Now Amazing Webpage</title>
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/slick.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/slick-theme.css') }}">
+  </head>
+  <body>
 
-    </div>
-        {% endblock %}
-    <div class="col-xs-12 col-md-3">
-        {% block rgtcol %}
-            {{super()}}
-        {% endblock %}
-    </div>
-    </div>
-{% endblock %}
+  <div class="banner">
+        <img src="{{ url_for('static', filename='avatars/images.jpg') }}">
+        <img src="{{ url_for('static', filename='avatars/vakgericht.jpeg') }}">
+        <img src="{{ url_for('static', filename='avatars/moon.jpg') }}">
+        <img src="{{ url_for('static', filename='avatars/bert.jpg') }}">
 
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/slick.js') }}"></script>
+  <script>
+  $(document).on('ready', function () {
+            $(".banner").slick({
+                dots: true,
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+            });
+        });
+  </script>
+
+  </body>
 </html>
-
-{% block scripts %}
-  {{ super() }}
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
-  <script type="text/javascript">
-    $(function () {
-      $('#datetimepicker1').datetimepicker({format: 'DD/MM/YYYY HH:mm'});
-    });
-  </script>
-  <script type="text/javascript">
-    $(function () {
-      $('#datetimepicker2').datetimepicker({format: 'DD/MM/YYYY HH:mm'});
-    });
-  </script>
-  <script type="text/javascript">
-    $(function () {
-      $('#datetimepicker3').datetimepicker({format: 'DD/MM/YYYY HH:mm'});
-    });
-  </script>
-{% endblock %}

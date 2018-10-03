@@ -2,11 +2,15 @@
 
 {% extends 'bootstrap/base.html' %}
 
+{% block head %}
+<head>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+</head>
+{% endblock %}
 
 {% block title %}
     {% if title %}{{ title }} - Vakgericht{% else %}{{ ('Welcome to Vakgericht') }}{% endif %}
 {% endblock %}
-
 
 {% block navbar %}
     <nav class="navbar navbar-default">
@@ -51,6 +55,15 @@
 
         {# application content needs to be provided in the app_content block #}
 {% block app_content %}
+
+{% block banner %}
+    <div class="container">
+        <div>your content</div>
+        <div>your content</div>
+        <div>your content</div>
+    </div>
+{% endblock %}
+
 <body>
     <div class="container">
         <div class="row">
@@ -70,10 +83,29 @@
         </div>
     </div>
 </body>
+
+<footer>
+{% block footer %}
+<div class="container">
+    <h2>GODVERDOMME</h2>
+</div>
+{% endblock %}
+</footer>
+
 {% endblock %}
 {% endblock %}
 
 {% block scripts %}
     {{ super() }}
     {{ moment.include_moment() }}
+    
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    
+    <script>
+    $(document).ready(function(){
+        $('.banner').slick({
+            setting-name: setting-value
+        });
+    });
+    </script>
 {% endblock %}

@@ -200,3 +200,7 @@ def delete_avatar(user_id):
         user.avatar = "vakgericht.jpeg"
     db.session.commit()
     return redirect(url_for("main.edit_profile"))
+
+@bp.route("/test")
+def test():
+    return render_template("test.html")
