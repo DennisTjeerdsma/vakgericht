@@ -14,6 +14,7 @@ from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
 from flask_uploads import UploadSet, IMAGES, configure_uploads
 
+
 db = SQLAlchemy()
 migrate = Migrate()
 login = LoginManager()

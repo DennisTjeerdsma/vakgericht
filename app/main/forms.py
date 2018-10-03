@@ -1,4 +1,3 @@
-from flask_wtf import FlaskForm
 from flask import current_app
 from wtforms import StringField, SubmitField, TextAreaField, SelectField, PasswordField
 from wtforms.validators import ValidationError, DataRequired, Length, Optional
@@ -6,7 +5,7 @@ from app.models import User
 from datetime import datetime
 from flask_wtf.file import FileField, FileAllowed
 import os
-from flask_wysiwyg import WysiwygField
+from flask_wtf import FlaskForm
 
 
 class RequiredIf(DataRequired):

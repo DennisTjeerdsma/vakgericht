@@ -22,11 +22,13 @@
                 {{wtf.form_field(form.birthday)}}
                 {% if current_user.avatar %}
                     {{form.avatar.label}}<br>
-                    <td style = "width:90px;">
-                    <img src="{{ url_for('static', filename= 'avatars/' + current_user.avatar) }}" style="width:80px;height:80px;">
-                    {{form.avatar}}
-                    </td><br>
-                    <td>
+                    <tr>
+                        <td style = "width:90px;">
+                        <img src="{{ url_for('static', filename= 'avatars/' + current_user.avatar) }}" style="width:100px;height:100px;">
+                        <p><td><input type="file" class="btn btn-info" id="avatar" name="avatar"></td>
+                        <td><a href ="{{url_for('main.delete_avatar', user_id=user.id)}}" class="btn btn-danger">Delete current</a></td></p>
+                        </td><br>
+                    </tr>
                 {% else %}
                     {{wtf.form_field(form.avatar)}}             
                 {% endif %}     
