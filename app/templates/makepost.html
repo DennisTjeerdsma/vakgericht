@@ -4,19 +4,28 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 <html>
-{% block app_content %}
-<div class='row'>
-	</div>
-	<div class="col-xs-12 col-md-9">
-		{% if form %}
-            {{ wtf.quick_form(form) }}
-        {% endif %}
-    </div>
-    <div class="col-xs-12 col-md-3">
-    	{% block rgtcol %}
-    		{{super()}}
-    	{% endblock %}
-    </div>
-</div>
+	<body>
+		{% block app_content %}
+		<div class="container">
+			<div class='row'>
+				<div class="col-xs-12 col-md-9">
+					<form method="POST">
+						{{ form.hidden_tag() }}
+						{{ wtf.form_field(form.title) }}
+						{{ wtf.form_field(form.body) }}
+						{{ wtf.form_field(form.submit) }}
+					</form>
+
+					{{ ckeditor.load() }}
+					{{ ckeditor.config(name="body") }}
+    			</div>
+    			<div class="col-xs-12 col-md-3">
+    				{% block rgtcol %}
+    					{{ super() }}
+    				{% endblock %}
+    			</div>
+			</div>
+		</div>
+	</body>
 {% endblock %}
 </html>

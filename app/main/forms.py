@@ -6,6 +6,7 @@ from datetime import datetime
 from flask_wtf.file import FileField, FileAllowed
 import os
 from flask_wtf import FlaskForm
+from flask_ckeditor import CKEditorField
 
 
 class RequiredIf(DataRequired):
@@ -78,7 +79,7 @@ class EditProfileForm(FlaskForm):
 
 class PostForm(FlaskForm):
     title = StringField('Title', validators=[DataRequired()])
-    post = TextAreaField('Say something', validators=[DataRequired()])
+    body = CKEditorField('Say something', validators=[DataRequired()])
     submit = SubmitField('Submit')
 
 

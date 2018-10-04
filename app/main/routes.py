@@ -139,7 +139,7 @@ def makeevent():
 def makepost():
     form = PostForm()
     if form.validate_on_submit():
-        post = Post(body=form.post.data, author=current_user, title=form.title.data)
+        post = Post(body=form.body.data, author=current_user, title=form.title.data)
         db.session.add(post)
         db.session.commit()
         flash('Your post is now live!')

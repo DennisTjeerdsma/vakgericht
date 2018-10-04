@@ -15,6 +15,8 @@ from flask_admin.contrib.sqla import ModelView
 from flask_uploads import UploadSet, IMAGES, configure_uploads
 from flask_admin.contrib.fileadmin import FileAdmin
 from flask_admin.contrib import rediscli
+from flask_ckeditor import CKEditor
+
 
 db = SQLAlchemy()
 migrate = Migrate()
@@ -24,6 +26,7 @@ mail = Mail()
 bootstrap = Bootstrap()
 moment = Moment()
 admin = Admin()
+ckeditor = CKEditor()
 
 
 def create_app(config_class=Config):
@@ -36,6 +39,8 @@ def create_app(config_class=Config):
     mail.init_app(app)
     bootstrap.init_app(app)
     moment.init_app(app)
+    ckeditor.init_app(app)
+
     app.redis = Redis.from_url(app.config["REDIS_URL"])
 
     app.avatars = UploadSet("avatars", IMAGES, default_dest=app.config["UPLOADED_AVATARS_DEST"])

@@ -14,7 +14,7 @@
             </td>    
             <td>
                 <p>Posted {{moment(post.timestamp).format("LLL") }}</p>
-                <span id="post{{ post.id }}">{{ post.body }}</span>
+                <span id="post{{ post.id }}">{{ post.body | safe}}</span>
             </td>
         </tr>
     </table>

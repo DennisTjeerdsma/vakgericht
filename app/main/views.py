@@ -35,6 +35,11 @@ class UserView(ModelView):
     def on_model_change(self, form, model, is_created):
         self.username = model.username
 
+        if model.avatar is None:
+            model.avatar = "vakgericht.jpeg"
+
+
+
     def prefix_name(self, file_data):
         parts = op.splitext(file_data.filename)
         return secure_filename(str(self.username) + str(time.time()) + str(parts[1]))
