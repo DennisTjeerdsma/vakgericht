@@ -1,11 +1,11 @@
 import os
 from dotenv import load_dotenv
 from redis import Redis
+import sys
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 load_dotenv(os.path.join(basedir, '.env'))
 
-redis = Redis()
 
 class Config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'you-will-never-guess'
@@ -23,4 +23,14 @@ class Config(object):
     POSTS_PER_PAGE = 25
     LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
     ONLINE_LAST_MINUTES = 5
-    MY_DATE_FORMATS=['%d/%m/%y']
+    MY_DATE_FORMATS= ['%d/%m/%y']
+    REDIS_URL = os.environ.get("REDIS_URL") or "redis://"
+    UPLOADED_AVATARS_DEST = './app/static/avatars'
+
+
+    """Configuring uploads"""
+    UPLOADS_DEFAULT_DEST = '.app/static/avatars'
+    UPLOADS_DEFAULT_URL = 'http://localhost:5000/static/img/'
+
+    UPLOADED_IMAGES_DEST = ".app/static/avatars"
+    UPLOADED_IMAGES_URL = 'http://localhost:5000/static/img/'

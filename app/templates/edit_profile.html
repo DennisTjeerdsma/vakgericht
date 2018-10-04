@@ -15,11 +15,24 @@
     <h1>Edit Profile</h1>
     <div class="row">
         <div class="col-md-8">
-            <form class="form form-horizontal" method="post" role="form">
+            <form class="form form-group" action="{{url_for('main.edit_profile') }}" method="post" role="form" enctype="multipart/form-data">
                 {{form.hidden_tag() }}
                 {{wtf.form_field(form.username)}}
                 {{wtf.form_field(form.email)}}
                 {{wtf.form_field(form.birthday)}}
+                {% if current_user.avatar %}
+                    {{form.avatar.label}}<br>
+                    <tr>
+                        <td style = "width:90px;">
+                        <img src="{{ url_for('static', filename= 'avatars/' + current_user.avatar) }}" style="width:100px;height:100px;"><br>
+                        <input id="uploadFile" name="uploadFile" type="file" style="display:none;">
+                        <div id="uploadButton" class="btn btn-primary">Upload</div>
+                        <td><a href ="{{url_for('main.delete_avatar', user_id=user.id)}}" class="btn btn-danger">Delete current</a></td></p>
+                        </td><br>
+                    </tr>
+                {% else %}
+                    {{wtf.form_field(form.avatar)}}             
+                {% endif %}     
                 {{wtf.form_field(form.study)}}
                 {{wtf.form_field(form.club)}}
                 {{wtf.form_field(form.about_me)}}
@@ -27,11 +40,6 @@
                 {{wtf.form_field(form.password2)}}
                 {{wtf.form_field(form.submit)}}
             </form>
-        </div>
-        <div>
-            {% if form.errors %}
-                {{form.errors}}
-            {% endif %}
         </div>
     </div>
     {% endblock %}
@@ -49,5 +57,12 @@
         $('#datepicker').data("DateTimePicker").date(moment(jsBday).format('DD/MM/YYYY'));    
         });
   </script>
+
+<script>
+ $('#uploadButton').on('click', function () {
+    $('#uploadFile').click();
+});
+</script>
+  
 
 {% endblock %}

@@ -1,9 +1,11 @@
-from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, TextAreaField, SelectField, PasswordField, DateField
-from wtforms.validators import ValidationError, DataRequired, Length, Optional, EqualTo
+from flask import current_app
+from wtforms import StringField, SubmitField, TextAreaField, SelectField, PasswordField
+from wtforms.validators import ValidationError, DataRequired, Length, Optional
 from app.models import User
 from datetime import datetime
-from wtforms.widgets import HiddenInput
+from flask_wtf.file import FileField, FileAllowed
+import os
+from flask_wtf import FlaskForm
 
 
 class RequiredIf(DataRequired):
@@ -38,6 +40,7 @@ class EditProfileForm(FlaskForm):
     email = StringField("Email", validators=[DataRequired()])
     birthday = StringField("Birthday", id="datepicker", validators=[DataRequired()])
     club = StringField("Previous club", validators=[Length(min=0, max=128)])
+    avatar = FileField("Avatar", validators=[FileAllowed(current_app.avatars, "images only!")])
     study = StringField("Studying", validators=[Length(min=0, max=128)])
     password = PasswordField("Password", validators=[Length(min=0, max=20)])
     password2 = PasswordField("Repeat Password", validators=[Length(min=0, max=20), RequiredIf("password")])
@@ -64,6 +67,14 @@ class EditProfileForm(FlaskForm):
             if user is not None:
                 raise ValidationError("Email is in use, please pick a different email")
 
+    def validate_avatar(self, avatar):
+        user = User.query.filter_by(username=self.original_username).first()
+        if avatar.data is None:
+            return
+        if user.avatar != "vakgericht.jpeg" \
+                and os.path.isfile(os.path.join(current_app.config["UPLOADED_AVATARS_DEST"], user.avatar)):
+            os.remove(os.path.join(current_app.config["UPLOADED_AVATARS_DEST"], user.avatar))
+
 
 class PostForm(FlaskForm):
     title = StringField('Title', validators=[DataRequired()])
@@ -81,7 +92,7 @@ class EventForm(FlaskForm):
     title = StringField('Title', validators=[DataRequired(), Length(min=1,max=140)])
     post = TextAreaField('Description', validators=[Length(min=0, max=500)])
     location = StringField('Location', validators=[Length(min=0)])
-    dropdown = SelectField(choices=[("No", "No"), ("Yes", "Yes")], id="dropdown", validators=[DataRequired()])
+    dropdown = SelectField("Enrollment", choices=[("No", "No"), ("Yes", "Yes")], id="dropdown", validators=[DataRequired()])
     start_time = StringField('Event start', id='datetimepicker1', validators=[DataRequired()])
     end_time = StringField('Event end', id='datetimepicker2', validators=[DataRequired()])
     ev_time = StringField('Enrollment closed', id='datetimepicker3', validators=[RequiredIf(dropdown="Yes")])

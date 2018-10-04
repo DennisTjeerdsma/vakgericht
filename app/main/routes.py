@@ -10,7 +10,9 @@ from app.main import bp
 from sqlalchemy import func
 import pytz
 import sys
-
+from werkzeug.utils import secure_filename
+import time
+import os
 
 @bp.context_processor
 def inject_user():
@@ -82,6 +84,8 @@ def edit_profile():
         current_user.email = form.email.data
         current_user.club = form.club.data
         current_user.study = form.study.data
+        filename = current_app.avatars.save(request.files["uploadFile"], name=current_user.username + str(time.time())+".")
+        current_user.avatar = secure_filename(filename)
         db.session.commit()
         flash('Your changes have been saved.')
         return redirect(url_for('main.edit_profile'))
@@ -186,3 +190,17 @@ def unenroll():
     event.remove_participant(current_user)
     db.session.commit()
     return redirect(url_for('main.event', event_id=event_id))
+
+@bp.route("/delete_avatar/<user_id>")
+@login_required
+def delete_avatar(user_id):
+    user = User.query.filter_by(id=user_id).first_or_404()
+    if user.avatar != "vakgericht.jpeg":
+        os.remove(os.path.join(current_app.config["UPLOADED_AVATARS_DEST"], user.avatar))
+        user.avatar = "vakgericht.jpeg"
+    db.session.commit()
+    return redirect(url_for("main.edit_profile"))
+
+@bp.route("/test")
+def test():
+    return render_template("test.html")

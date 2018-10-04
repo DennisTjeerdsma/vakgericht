@@ -1,4 +1,12 @@
+<!doctype hmtl>
+
 {% extends 'bootstrap/base.html' %}
+
+{% block head %}
+<head>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+</head>
+{% endblock %}
 
 {% block title %}
     {% if title %}{{ title }} - Vakgericht{% else %}{{ ('Welcome to Vakgericht') }}{% endif %}
@@ -46,38 +54,58 @@
         {% endwith %}
 
         {# application content needs to be provided in the app_content block #}
-        {% block app_content %}
-        <body>
-    <div class="row">
-        {% block lftcol %}
-        <div class="col-xs-12 col-md-2">
-            <div class="container">
+{% block app_content %}
+
+{% block banner %}
+    <div class="container">
+        <div>your content</div>
+        <div>your content</div>
+        <div>your content</div>
+    </div>
+{% endblock %}
+
+<body>
+    <div class="container">
+        <div class="row">
+            {% block midcol %}
+                <div class="col-xs-12 col-md-8"></div>
+            {% endblock %}
+            {% block rgtcol %}
                 <h3>Agenda</h3>
                 {% for item in agenda_list %}
                     <p><a href= "{{url_for('main.event', event_id=item.id) }}">{{item.title|string() }} <br></a> {{moment(item.start_time, local=True).calendar()}}</p>
                 {% endfor %}
-            </div>
+                <h3>Online</h3>
+                {% for user in online_user  %}
+                    <p><a href="{{ url_for('main.user', username=user) }}">{{user|string()}}<br></a></p>
+                {% endfor %}       
+             {% endblock %}
         </div>
-        {% endblock %}
-        {% block midcol %}
-        <div class="col-xs-12 col-md-8">
-        </div>
-        {% endblock %}
-        {% block rgtcol %}
-        <div class="col-xs-12 col-md-2">
-            <h3>Online</h3>
-            {% for user in online_user  %}
-                <p><a href="{{ url_for('main.user', username=user) }}">{{user|string()}}<br></a></p>
-            {% endfor %}       
-        </div>
-        {% endblock %}
-    </div>
     </div>
 </body>
+
+<footer>
+{% block footer %}
+<div class="container">
+    <h2>GODVERDOMME</h2>
+</div>
+{% endblock %}
+</footer>
+
 {% endblock %}
 {% endblock %}
 
 {% block scripts %}
     {{ super() }}
     {{ moment.include_moment() }}
+    
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    
+    <script>
+    $(document).ready(function(){
+        $('.banner').slick({
+            setting-name: setting-value
+        });
+    });
+    </script>
 {% endblock %}

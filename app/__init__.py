@@ -12,7 +12,9 @@ from config import Config
 from redis import Redis
 from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
-
+from flask_uploads import UploadSet, IMAGES, configure_uploads
+from flask_admin.contrib.fileadmin import FileAdmin
+from flask_admin.contrib import rediscli
 
 db = SQLAlchemy()
 migrate = Migrate()
@@ -21,7 +23,6 @@ login.login_view = 'auth.login'
 mail = Mail()
 bootstrap = Bootstrap()
 moment = Moment()
-redis = Redis()
 admin = Admin()
 
 
@@ -35,15 +36,23 @@ def create_app(config_class=Config):
     mail.init_app(app)
     bootstrap.init_app(app)
     moment.init_app(app)
+    app.redis = Redis.from_url(app.config["REDIS_URL"])
+
+    app.avatars = UploadSet("avatars", IMAGES, default_dest=app.config["UPLOADED_AVATARS_DEST"])
+    configure_uploads(app, app.avatars)
 
     from app.models import User, Event, Post, Quote
-    from app.main.views import UserView, EventView
+
+    with app.app_context():
+        from app.main.views import UserView, EventView
 
     admin.init_app(app)
     admin.add_view(UserView(User, db.session))
     admin.add_view(EventView(Event, db.session))
     admin.add_view(ModelView(Post, db.session))
     admin.add_view(ModelView(Quote, db.session))
+    admin.add_view(FileAdmin("./app/static/", '/static/'))
+    admin.add_view(rediscli.RedisCli(app.redis))
 
     from app.errors import bp as errors_bp
     app.register_blueprint(errors_bp)
@@ -66,14 +75,14 @@ def create_app(config_class=Config):
             mail_handler = SMTPHandler(
                 mailhost=(app.config['MAIL_SERVER'], app.config['MAIL_PORT']),
                 fromaddr='no-reply@' + app.config['MAIL_SERVER'],
-                toaddrs=app.config['ADMINS'], subject='microblog Failure',
+                toaddrs=app.config['ADMINS'], subject='vakgericht Failure',
                 credentials=auth, secure=secure)
             mail_handler.setLevel(logging.ERROR)
             app.logger.addHandler(mail_handler)
 
         if not os.path.exists('logs'):
             os.mkdir('logs')
-        file_handler = RotatingFileHandler('logs/microblog.log',
+        file_handler = RotatingFileHandler('logs/vakgericht.log',
                                            maxBytes=10240, backupCount=10)
         file_handler.setFormatter(logging.Formatter(
             '%(asctime)s %(levelname)s: %(message)s '
@@ -82,7 +91,7 @@ def create_app(config_class=Config):
         app.logger.addHandler(file_handler)
 
         app.logger.setLevel(logging.INFO)
-        app.logger.info('microblog startup')
+        app.logger.info('vakgericht startup')
         if app.config['LOG_TO_STDOUT']:
             stream_handler = logging.StreamHandler()
             stream_handler.setLevel(logging.INFO)
@@ -90,7 +99,7 @@ def create_app(config_class=Config):
         else:
             if not os.path.exists('logs'):
                 os.mkdir('logs')
-            file_handler = RotatingFileHandler('logs/microblog.log',
+            file_handler = RotatingFileHandler('logs/vakgericht.log',
                                                maxBytes=10240, backupCount=10)
             file_handler.setFormatter(logging.Formatter(
                 '%(asctime)s %(levelname)s: %(message)s '
@@ -101,8 +110,6 @@ def create_app(config_class=Config):
         app.logger.setLevel(logging.INFO)
         app.logger.info('Vakgericht startup')
 
+
     return app
-
-
-from app import models
 
