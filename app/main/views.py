@@ -1,7 +1,8 @@
 from flask_admin.contrib.sqla import ModelView
 from flask_admin.form.upload import FileUploadField, ImageUploadField
+from wtforms.widgets import TextArea
 from app.models import User, ACCESS, Event
-from wtforms import TextField
+from wtforms import TextAreaField, TextField
 from werkzeug.security import generate_password_hash
 from flask_login import current_user
 import time
@@ -11,8 +12,14 @@ from werkzeug.utils import secure_filename
 import sys
 
 
-def get_user():
-    return
+class CKTextAreaWidget(TextArea):
+    def __call__(self, field, **kwargs):
+        kwargs.setdefault('class_', 'ckeditor')
+        return super(CKTextAreaWidget, self).__call__(field, **kwargs)
+
+
+class CKTextAreaField(TextAreaField):
+    widget = CKTextAreaWidget()
 
 
 class MyPassField(TextField):
@@ -37,7 +44,6 @@ class UserView(ModelView):
 
         if model.avatar is None:
             model.avatar = "vakgericht.jpeg"
-
 
 
     def prefix_name(self, file_data):
@@ -105,3 +111,12 @@ class EventView(ModelView):
             ("Yes", "Yes")
         ]
     }
+
+
+class PostView(ModelView):
+    form_overrides = dict(
+        body=CKTextAreaField,
+    )
+
+    create_template = 'admin.html'
+    edit_template = 'admin.html'

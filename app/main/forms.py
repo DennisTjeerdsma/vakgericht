@@ -84,7 +84,7 @@ class PostForm(FlaskForm):
 
 
 class QuoteForm(FlaskForm):
-    quote = TextAreaField('Enter a Quote', validators=[DataRequired(), Length(min=1, max=140)])
+    quote = CKEditorField('Enter a Quote', validators=[DataRequired(), Length(min=1, max=140)])
     name = StringField('Name', validators=[DataRequired()])
     submit = SubmitField('Submit')
 

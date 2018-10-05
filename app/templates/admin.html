@@ -1,47 +1,6 @@
-{% extends 'base.html' %}
-{% import 'bootstrap/wtf.html' as wtf %}
+{% extends 'admin/model/edit.html' %}
 
-
-<!DOCTYPE html>
-<html>
-
-{% block app_content %}
-
-<div>
-	<div class="row">
-		<div class="col-xs-12 col-md-2">
-			{% block lftcol %}
-				{{super()}}
-			{% endblock %}
-		</div>
-		<div class="col-xs-12 col-md-8">
-			<div class="col-xs-12 col-md-6 row-xd-4 row-md-4">
-				<div class="panel panel-default">
-					<div class="panel-heading"><p><b>Create User</b></p></div>
-					<div class="panel-body"><p>Create</p></div>
-				</div>
-			</div>
-			<div class="col-xs-12 col-md-6 row-xd-4 row-md-4">
-				<div class="panel panel-default">
-					<div class="panel-heading"><p><b>Edit Post</b></p></div>
-					<div class="panel-body"><p>Edit</p></div>
-				</div>
-			</div>
-			<div class="col-xs-12 col-md-6 row-xd-4 row-md-4">
-				<div class="panel panel-default">
-					<div class="panel-heading"><p><b>Edit User</b></p></div>
-					<div class="panel-body"><p>Edit</p></div>
-				</div>
-			</div>
-		</div>
-		<div class="col-xs-12 col-md-2">
-			{% block rgtcol %}
-				{{super()}}
-			{% endblock %}
-		</div>
-	</div>
-</div>
+{% block tail %}
+    {{ super() }}
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.0.1/ckeditor.js"></script>
 {% endblock %}
-
-</div>
-</html>

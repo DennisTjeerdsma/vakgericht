@@ -42,6 +42,7 @@ def create_app(config_class=Config):
     ckeditor.init_app(app)
 
     app.redis = Redis.from_url(app.config["REDIS_URL"])
+    app.debug=True
 
     app.avatars = UploadSet("avatars", IMAGES, default_dest=app.config["UPLOADED_AVATARS_DEST"])
     configure_uploads(app, app.avatars)
@@ -49,12 +50,12 @@ def create_app(config_class=Config):
     from app.models import User, Event, Post, Quote
 
     with app.app_context():
-        from app.main.views import UserView, EventView
+        from app.main.views import UserView, EventView, PostView
 
     admin.init_app(app)
     admin.add_view(UserView(User, db.session))
     admin.add_view(EventView(Event, db.session))
-    admin.add_view(ModelView(Post, db.session))
+    admin.add_view(PostView(Post, db.session))
     admin.add_view(ModelView(Quote, db.session))
     admin.add_view(FileAdmin("./app/static/", '/static/'))
     admin.add_view(rediscli.RedisCli(app.redis))

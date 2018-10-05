@@ -19,7 +19,7 @@
                     <p>Birthday: {{moment(user.bday).format("DD/MM/YYYY")}}
                 
                     {% if user.club %} <p>Previous Club: {{user.club}}.</p> {% endif %}
-                    {% if user.studying %} <p>Studying: {{user.study}}.</p> {% endif %}
+                    {% if user.study %}<p>Studying: {{user.study}}.</p> {% endif %}
 
                     <p>Last seen on: {{ moment(user.last_seen).format('LLL') }}</p>
 

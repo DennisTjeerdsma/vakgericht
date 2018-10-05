@@ -11,6 +11,9 @@
 		{% if form %}
 			{{wtf.quick_form(form)}}
 		{% endif %}
+
+		{{ ckeditor.load() }}
+		{{ ckeditor.config(name = "quote") }}
 	</div>
     <div class="col-xs-12 col-md-3">
     	{% block rgtcol %}
