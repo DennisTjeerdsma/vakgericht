@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-xs-12 col-md-9">
                 <h1>Hi, {{current_user.username}}</h1>
-                <a href="{{url_for('main.makepost')}}" class="btn btn-default">Make Post</a>
+                <a href="{{url_for('main.makepost')}}" class="btn btn-primary">Make Post</a>
                 <hr>
                 {% for post in posts %}
                     {% include '_post.html' %}
