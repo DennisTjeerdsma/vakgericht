@@ -50,7 +50,9 @@ def create_app(config_class=Config):
     from app.models import User, Event, Post, Quote
 
     with app.app_context():
-        from app.main.views import UserView, EventView, PostView
+        from app.main.views.userview import UserView
+        from app.main.views.eventview import EventView
+        from app.main.views.postview import PostView
 
     admin.init_app(app)
     admin.add_view(UserView(User, db.session))

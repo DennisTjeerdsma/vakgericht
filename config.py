@@ -34,3 +34,5 @@ class Config(object):
 
     UPLOADED_IMAGES_DEST = ".app/static/avatars"
     UPLOADED_IMAGES_URL = 'http://localhost:5000/static/img/'
+
+    
