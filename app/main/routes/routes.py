@@ -1,7 +1,3 @@
-from flask import Blueprint
-
-bp = Blueprint('main', __name__)
-
 from app.main.routes import contextprocessor
 from app.main.routes import index
 from app.main.routes import user

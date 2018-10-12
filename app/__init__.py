@@ -14,7 +14,6 @@ from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
 from flask_uploads import UploadSet, IMAGES, configure_uploads
 from flask_admin.contrib.fileadmin import FileAdmin
-from flask_admin.contrib import rediscli
 from flask_ckeditor import CKEditor
 
 
@@ -53,14 +52,14 @@ def create_app(config_class=Config):
         from app.main.views.userview import UserView
         from app.main.views.eventview import EventView
         from app.main.views.postview import PostView
+        from app.main.views.quoteview import QuoteView
 
     admin.init_app(app)
     admin.add_view(UserView(User, db.session))
     admin.add_view(EventView(Event, db.session))
     admin.add_view(PostView(Post, db.session))
-    admin.add_view(ModelView(Quote, db.session))
+    admin.add_view(QuoteView(Quote, db.session))
     admin.add_view(FileAdmin("./app/static/", '/static/'))
-    admin.add_view(rediscli.RedisCli(app.redis))
 
     from app.errors import bp as errors_bp
     app.register_blueprint(errors_bp)
